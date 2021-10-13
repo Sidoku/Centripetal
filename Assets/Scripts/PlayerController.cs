@@ -6,6 +6,8 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     InputMaster controls;
+    Vector2 move;
+    bool jump;
 
     private Rigidbody2D rb;
     public float speed;
@@ -21,9 +23,26 @@ public class PlayerController : MonoBehaviour
     private float jumpTimeCounter;
     public float jumpTime;
 
+    private void OnEnable()
+    {
+        controls.Player.Enable();
+    }
+
+    private void OnDisable()
+    {
+        controls.Player.Disable();
+    }
     private void Awake()
     {
         controls = new InputMaster();
+
+        //Horizontal movement controls
+        controls.Player.Movement.performed += ctx => move = ctx.ReadValue<Vector2>();
+        //controls.Player.Movement.canceled += ctx => move = Vector2.zero;
+
+        //Jump
+        controls.Player.Jump.performed += ctx => jump = true ;
+        controls.Player.Jump.canceled += ctx => jump = false;
 
     }
 
@@ -37,15 +56,15 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         isGrounded = Physics2D.OverlapCircle(feetPos.position, checkRadius, WhatIsGround);
-        if(isGrounded == true && Input.GetKeyDown(KeyCode.Space))
+        if (isGrounded == true && jump == true)
         {
             isjumping = true;
             jumpTimeCounter = jumpTime;
             rb.velocity = Vector2.up * jumpForce;
         }
-        if(Input.GetKey(KeyCode.Space) && isjumping == true)
+        if (jump == true && isjumping == true)
         {
-            if(jumpTimeCounter > 0)
+            if (jumpTimeCounter > 0)
             {
                 rb.velocity = Vector2.up * jumpForce;
                 jumpTimeCounter -= Time.deltaTime;
@@ -54,10 +73,10 @@ public class PlayerController : MonoBehaviour
             {
                 isjumping = false;
             }
-           
+
         }
 
-        if (Input.GetKeyUp(KeyCode.Space))
+        if (jump == false)
         {
             isjumping = false;
         }
@@ -65,7 +84,6 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        moveInput = Input.GetAxisRaw("Horizontal");
-        rb.velocity = new Vector2(moveInput * speed, rb.velocity.y);
+        rb.velocity = new Vector2(move.x * speed, rb.velocity.y);
     }
 }
