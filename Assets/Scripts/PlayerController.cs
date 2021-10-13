@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+    InputMaster controls;
+
     private Rigidbody2D rb;
     public float speed;
     public float jumpForce;
@@ -17,6 +20,12 @@ public class PlayerController : MonoBehaviour
 
     private float jumpTimeCounter;
     public float jumpTime;
+
+    private void Awake()
+    {
+        controls = new InputMaster();
+
+    }
 
     // Start is called before the first frame update
     void Start()
