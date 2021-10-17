@@ -38,10 +38,10 @@ public class PlayerController : MonoBehaviour
 
         //Horizontal movement controls
         controls.Player.Movement.performed += ctx => move = ctx.ReadValue<Vector2>();
-        //controls.Player.Movement.canceled += ctx => move = Vector2.zero;
+        controls.Player.Movement.canceled += ctx => move = Vector2.zero;
 
         //Jump
-        controls.Player.Jump.performed += ctx => jump = true ;
+        controls.Player.Jump.performed += ctx => jump = true;
         controls.Player.Jump.canceled += ctx => jump = false;
 
     }
@@ -84,6 +84,8 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rb.velocity = new Vector2(move.x * speed, rb.velocity.y);
+        // rb.velocity = new Vector2(move.x * speed, rb.velocity.y);
+        Vector2 m = new Vector2(move.x, move.y) * Time.deltaTime;
+        transform.Translate(m, Space.World);
     }
 }
