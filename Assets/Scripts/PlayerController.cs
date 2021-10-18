@@ -58,7 +58,7 @@ public class PlayerController : MonoBehaviour
         isGrounded = Physics2D.OverlapCircle(feetPos.position, checkRadius, WhatIsGround);
         if (isGrounded == true && jump == true)
         {
-            Debug.Log("isGround", isGrounded);
+            Debug.Log("isGround" + isGrounded);
             isjumping = true;
             jumpTimeCounter = jumpTime;
             rb.velocity = Vector2.up * jumpForce;
