@@ -15,13 +15,9 @@ public class PlayerController : MonoBehaviour
     private float moveInput;
 
     private bool isGrounded;
-    public bool isjumping;
-    public Transform feetPos;
-    public float checkRadius;
-    public LayerMask WhatIsGround;
+    public int jumps;
+    public int maxJumps = 2;
 
-    private float jumpTimeCounter;
-    public float jumpTime;
 
     private void OnEnable()
     {
@@ -41,7 +37,7 @@ public class PlayerController : MonoBehaviour
         controls.Player.Movement.canceled += ctx => move = Vector2.zero;
 
         //Jump
-        controls.Player.Jump.performed += ctx => jump = true;
+        controls.Player.Jump.performed += ctx => this.Jump();
         controls.Player.Jump.canceled += ctx => jump = false;
 
     }
@@ -55,7 +51,11 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        isGrounded = Physics2D.OverlapCircle(feetPos.position, checkRadius, WhatIsGround);
+        /*if(jump == true)
+        {
+            this.Jump();
+        }*/
+        /*isGrounded = Physics2D.OverlapCircle(feetPos.position, checkRadius, WhatIsGround);
         if (isGrounded == true && jump == true)
         {
             Debug.Log("isGround" + isGrounded);
@@ -80,6 +80,30 @@ public class PlayerController : MonoBehaviour
         if (jump == false)
         {
             isjumping = false;
+        }*/
+
+
+    }
+
+    private void Jump()
+    {
+        if (jumps > 0)
+        {
+            rb.velocity = Vector2.up * jumpForce;
+            isGrounded = false;
+            jumps--;
+        }
+        if (jumps == 0)
+        {
+            return;
+        }
+    }
+    void OnCollisionEnter2D(Collision2D collider)
+    {
+        if (collider.gameObject.tag == "Ground")
+        {
+            jumps = maxJumps;
+            isGrounded = true;
         }
     }
 
