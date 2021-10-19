@@ -395,6 +395,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 7
   jumpForce: 7
+  boostForce: 7
   jumps: 0
   maxJumps: 2
 --- !u!1 &1028975786
