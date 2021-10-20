@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     //bool boost;
     public int boost;
 
+    
     private Rigidbody2D rb;
     public float speed;
     public float jumpForce;
@@ -66,9 +67,7 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate() //made this public and moved it from the bottom
     {
-   
-        rb.AddForce(new Vector2(move.x * speed * Time.fixedDeltaTime, move.y), ForceMode2D.Impulse);
-
+            rb.AddForce(new Vector2(move.x * speed * Time.fixedDeltaTime, move.y), ForceMode2D.Impulse);
     }
 
     private void Boost() //Changed boost to be a int rather than bool. We can maybe make a level with multiple boosts
