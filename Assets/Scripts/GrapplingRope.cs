@@ -22,7 +22,7 @@ public class GrapplingRope : MonoBehaviour
     public AnimationCurve ropeProgressionCurve;
     [SerializeField] [Range(1, 50)] private float ropeProgressionSpeed = 1;
 
-    float moveTime = 0;
+    float moveTime = 1; //changed to int from flaot, orig 0
 
     [HideInInspector] public bool isGrappling = true;
 
@@ -30,7 +30,6 @@ public class GrapplingRope : MonoBehaviour
 
     private void OnEnable()
     {
-        moveTime = 0;
         m_lineRenderer.positionCount = percision;
         waveSize = StartWaveSize;
         strightLine = false;
