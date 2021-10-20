@@ -2964,7 +2964,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boost: 0
-  speed: 5
+  speed: 4
   jumpForce: 3.5
   boostForce: 7
   jumps: 0
