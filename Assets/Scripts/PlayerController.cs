@@ -7,21 +7,24 @@ public class PlayerController : MonoBehaviour
 {
     InputMaster controls;
     Vector2 move;
-    bool jump;
+    //bool jump;
+    //bool boost;
+    public int boost;
 
     private Rigidbody2D rb;
     public float speed;
     public float jumpForce;
+    public float boostForce;
     private float moveInput;
 
-    private bool isGrounded;
-    public bool isjumping;
-    public Transform feetPos;
-    public float checkRadius;
-    public LayerMask WhatIsGround;
+    public int jumps;
+    public int maxJumps = 2;
+    public int maxBoost = 1;
 
-    private float jumpTimeCounter;
-    public float jumpTime;
+
+
+
+
 
     private void OnEnable()
     {
@@ -41,8 +44,11 @@ public class PlayerController : MonoBehaviour
         controls.Player.Movement.canceled += ctx => move = Vector2.zero;
 
         //Jump
-        controls.Player.Jump.performed += ctx => jump = true;
-        controls.Player.Jump.canceled += ctx => jump = false;
+        controls.Player.Jump.performed += ctx => this.Jump();
+        //controls.Player.Jump.canceled += ctx => jump = false;
+
+        controls.Player.Boost.performed += ctx => this.Boost();
+        //controls.Player.Boost.canceled += ctx => boost = false; //removed ability to cancel boost, was doing it too often
 
     }
 
@@ -55,38 +61,61 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        isGrounded = Physics2D.OverlapCircle(feetPos.position, checkRadius, WhatIsGround);
-        if (isGrounded == true && jump == true)
+        
+    }
+
+    private void FixedUpdate() //made this public and moved it from the bottom
+    {
+   
+        rb.AddForce(new Vector2(move.x * speed * Time.fixedDeltaTime, move.y), ForceMode2D.Impulse);
+
+    }
+
+    private void Boost() //Changed boost to be a int rather than bool. We can maybe make a level with multiple boosts
+    {
+        if (boost > 0)
         {
-            Debug.Log("isGround", isGrounded);
-            isjumping = true;
-            jumpTimeCounter = jumpTime;
-            rb.velocity = Vector2.up * jumpForce;
-        }
-        if (jump == true && isjumping == true)
-        {
-            if (jumpTimeCounter > 0)
+            Vector2 v2Velocity01 = rb.velocity;
+            if (move.x < 0) //move.x is positive when moving right, move.x is negative when moving left
             {
-                rb.velocity = Vector2.up * jumpForce;
-                jumpTimeCounter -= Time.deltaTime;
+                
+                rb.velocity = Vector2.left * boostForce + v2Velocity01;
             }
             else
             {
-                isjumping = false;
+                rb.velocity = Vector2.right * boostForce + v2Velocity01;
             }
-
-        }
-
-        if (jump == false)
-        {
-            isjumping = false;
+            boost--;
         }
     }
 
-    private void FixedUpdate()
+    
+    private void Jump()
     {
-        // rb.velocity = new Vector2(move.x * speed, rb.velocity.y);
-        Vector2 m = new Vector2(move.x, move.y) * Time.deltaTime;
-        transform.Translate(m, Space.World);
+        if (jumps > 0)
+        {
+            //Rigidbody rb = GetComponent<Rigidbody>();
+            Vector2 v2Velocity = rb.velocity;
+            rb.velocity = new Vector2(move.x, 0); // stops player from falling down, allowing for a verticle jump when falling
+            rb.velocity = new Vector2(move.x + v2Velocity.x, jumpForce * 100 * Time.fixedDeltaTime);
+            Debug.Log("Jump");
+            jumps--;
+        }
+        if (jumps == 0)
+        {
+            return;
+        }
     }
+
+
+void OnCollisionEnter2D(Collision2D collider)
+{
+if (collider.gameObject.tag == "Ground")
+{
+    jumps = maxJumps;
+    boost = maxBoost;
+}
+}
+
+
 }
