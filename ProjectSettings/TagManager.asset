@@ -4,8 +4,16 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Ground
-  - Ceiling
+  - Bomb
+  - Enemy
+  - Platforms
+  - HealthBar
+  - Diamond
+  - Coin
+  - Wall
+  - Box
+  - Yoyo
+  - Breakfast
   layers:
   - Default
   - TransparentFX
@@ -13,21 +21,21 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - Grapple
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Ground
+  - Environment
+  - NPC
+  - Bomb
+  - FX
+  - Player
+  - Check Area
+  - Kick
+  - OneWayPlatform
+  - Collection
+  - CollectionTrigger
+  - GroundCheck
+  - Items
+  - Yoyo
+  - Slope
   - 
   - 
   - 
@@ -40,6 +48,12 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 3746658829
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: NPC
+    uniqueID: 3085588639
     locked: 0
