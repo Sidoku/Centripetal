@@ -4,8 +4,6 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Bomb
-  - Enemy
   - Platforms
   - HealthBar
   - Diamond
@@ -16,6 +14,7 @@ TagManager:
   - Breakfast
   - Ground
   - Slope
+  - SpeedZone
   layers:
   - Default
   - TransparentFX

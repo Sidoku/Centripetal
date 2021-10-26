@@ -263,7 +263,7 @@ public class PlayerController : MonoBehaviour
             newForce.Set(0,jumpForce);
             rb.AddForce(newForce,ForceMode2D.Impulse);
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-            rb.gravityScale = 4;
+            rb.gravityScale = 8;
             //---
             //sid's version
             // Vector2 v2Velocity = rb.velocity;
@@ -323,7 +323,7 @@ public class PlayerController : MonoBehaviour
         }
         else if (!isJump && !isGround)//上平台之后修复重力变成1
         {
-            rb.gravityScale = 4;
+            rb.gravityScale = 8;
         }
 
         if (rb.velocity.y <= 0.0f)
@@ -475,7 +475,7 @@ public class PlayerController : MonoBehaviour
     
     void OnCollisionEnter2D(Collision2D collider)
     {
-        if (collider.gameObject.tag == "Ground" || collider.gameObject.tag == "Slope")
+        if (collider.gameObject.tag == "Ground" || collider.gameObject.tag == "Slope" || collider.gameObject.tag == "SpeedZone")
         {
             jumps = maxJumps;
             boost = maxBoost;
@@ -483,12 +483,17 @@ public class PlayerController : MonoBehaviour
         
         if (collider.gameObject.tag == "Ground")
         {
-            speed = 8;
+            speed = 12;
         }
 
         if (collider.gameObject.tag == "Slope")
         {
-            speed = 20;
+            speed = 30;
+        }
+
+        if (collider.gameObject.CompareTag("SpeedZone"))
+        {
+            speed = 40;
         }
     }
 
