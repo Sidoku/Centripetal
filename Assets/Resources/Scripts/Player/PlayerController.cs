@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Vector2 = UnityEngine.Vector2;
@@ -82,7 +83,7 @@ public class PlayerController : MonoBehaviour
     #endregion
     #region private members
     
-    public Rigidbody2D rb;
+    private Rigidbody2D rb;
     private Animator _animator;
     public float horizontalInput;
     public float verticalInput;
@@ -474,15 +475,32 @@ public class PlayerController : MonoBehaviour
     
     void OnCollisionEnter2D(Collision2D collider)
     {
-        if (collider.gameObject.tag == "Ground")
+        if (collider.gameObject.tag == "Ground" || collider.gameObject.tag == "Slope")
         {
             jumps = maxJumps;
             boost = maxBoost;
         }
+        
+        if (collider.gameObject.tag == "Ground")
+        {
+            speed = 8;
+        }
+
+        if (collider.gameObject.tag == "Slope")
+        {
+            speed = 20;
+        }
     }
 
     #endregion
-    
+
+    private void OnCollisionExit2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Ground"))
+        {
+            speed = 8;
+        }
+    }
     // private void OnTriggerEnter2D(Collider2D other)
     // {
     //     if (other.gameObject.CompareTag("Diamond"))//这么写是为了防止吃宝石数量错误 通过下面的调用来增加宝石数量。

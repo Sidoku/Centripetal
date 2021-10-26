@@ -110,53 +110,53 @@ public class Mechanics : MonoBehaviour
         #region mechanic_2
 
         // if (Input.GetMouseButtonDown(1) && !isUseSkills  && PlayerController.Instance.isGround && !WallCheck.isWall)//player cannot use walk dog when he jumps
-        if (Input.GetKeyDown(KeyCode.K) && !isUseSkills && PlayerController.Instance.isGround && !WallCheck.isWall
-        ) //player cannot use walk dog when he jumps
-        {
-            if (isUseSkills)
-            {
-                return;
-            }
-
-            walkDogPoint = new Vector3(playerPoint.x + direction * walkDogDistance, playerPoint.y);
-            PlayerController.Instance.rb.bodyType = RigidbodyType2D.Kinematic;
-            isMechanic_2 = true;
-            isUseSkills = true;
-            InstantiateYoyo(direction);
-        }
-
-        if (isInstantiated && isMechanic_2)
-        {
-            if (!tempYoyo)
-            {
-                return;
-            }
-
-            tempYoyo.transform.position = Vector2.MoveTowards(tempYoyo.transform.position, walkDogPoint,
-                mechanic2YoyoSpeed * Time.deltaTime);
-            WalkDog();
-            if (yoyoMaxDistance) //max rope length of yoyo, player move with yoyo together
-            {
-                if (!WallCheck.isWall)
-                {
-                    //when the player in the gap, player should not chase the yoyo, instead, it will stay in that place
-                    transform.position = Vector2.MoveTowards(transform.position, walkDogPoint,
-                        mechanic2YoyoSpeed * Time.deltaTime);
-                    _animator.SetFloat("speed", 1f); //TODO
-                    if (Vector2.Distance(transform.position, walkDogPoint) <= 1f)
-                    {
-                        transform.position = walkDogPoint;
-                    }
-                }
-                else
-                {
-                    destinationPoint = playerPoint;
-                    walkDogPoint = playerPoint;
-                }
-            }
-
-            // tempYoyo.transform.position = Vector2.MoveTowards(tempYoyo.transform.position, destinationPoint, 3 * Time.deltaTime);
-        }
+        // if (Input.GetKeyDown(KeyCode.K) && !isUseSkills && PlayerController.Instance.isGround && !WallCheck.isWall
+        // ) //player cannot use walk dog when he jumps
+        // {
+        //     if (isUseSkills)
+        //     {
+        //         return;
+        //     }
+        //
+        //     walkDogPoint = new Vector3(playerPoint.x + direction * walkDogDistance, playerPoint.y);
+        //     PlayerController.Instance.rb.bodyType = RigidbodyType2D.Kinematic;
+        //     isMechanic_2 = true;
+        //     isUseSkills = true;
+        //     InstantiateYoyo(direction);
+        // }
+        //
+        // if (isInstantiated && isMechanic_2)
+        // {
+        //     if (!tempYoyo)
+        //     {
+        //         return;
+        //     }
+        //
+        //     tempYoyo.transform.position = Vector2.MoveTowards(tempYoyo.transform.position, walkDogPoint,
+        //         mechanic2YoyoSpeed * Time.deltaTime);
+        //     WalkDog();
+        //     if (yoyoMaxDistance) //max rope length of yoyo, player move with yoyo together
+        //     {
+        //         if (!WallCheck.isWall)
+        //         {
+        //             //when the player in the gap, player should not chase the yoyo, instead, it will stay in that place
+        //             transform.position = Vector2.MoveTowards(transform.position, walkDogPoint,
+        //                 mechanic2YoyoSpeed * Time.deltaTime);
+        //             _animator.SetFloat("speed", 1f); //TODO
+        //             if (Vector2.Distance(transform.position, walkDogPoint) <= 1f)
+        //             {
+        //                 transform.position = walkDogPoint;
+        //             }
+        //         }
+        //         else
+        //         {
+        //             destinationPoint = playerPoint;
+        //             walkDogPoint = playerPoint;
+        //         }
+        //     }
+        //
+        //     // tempYoyo.transform.position = Vector2.MoveTowards(tempYoyo.transform.position, destinationPoint, 3 * Time.deltaTime);
+        // }
 
         #endregion
 
@@ -381,7 +381,7 @@ public class Mechanics : MonoBehaviour
         isMechanic_2 = false;
         yoyoMaxDistance = false;
         isJumped = false;
-        PlayerController.Instance.rb.bodyType = RigidbodyType2D.Dynamic;
+        // PlayerController.Instance.rb.bodyType = RigidbodyType2D.Dynamic;
         PlayerController.Instance.canJump2 = false;
         Destroy(tempYoyo);
     }
