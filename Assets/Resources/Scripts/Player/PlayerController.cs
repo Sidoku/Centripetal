@@ -137,7 +137,7 @@ public class PlayerController : MonoBehaviour
         //     _animator.SetTrigger("Dead");
         //     return;
         // }
-        //InputCheck();
+        // InputCheck();
     }
 
     private void FixedUpdate()
@@ -150,10 +150,10 @@ public class PlayerController : MonoBehaviour
             return;
         }
         PhysicsCheck();
-        if (Mechanics.Instance.isMechanic_2)
-        {
-            return;
-        }
+        // if (Mechanics.Instance.isMechanic_2)
+        // {
+        //     return;
+        // }
         Movement();
         SlopeCheck();
     }
@@ -245,19 +245,6 @@ public class PlayerController : MonoBehaviour
 
     void Jump()
     {
-        // isJump = true;
-        // jumpFX.SetActive(true);
-        // jumpFX.transform.position = transform.position + new Vector3(0, -0.45f, 0);
-        // newVelocity.Set(0, 0);
-        // rb.velocity = newVelocity;
-        // newForce.Set(0,jumpForce);
-        // rb.AddForce(newForce,ForceMode2D.Impulse);
-        // // rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-        // rb.gravityScale = 4;
-        // if (isJump && gameObject.layer != LayerMask.NameToLayer("Player"))
-        // {
-        //     gameObject.layer = LayerMask.NameToLayer("Player");
-        // }
         if (jumps == 0)
         {
             return;
@@ -265,24 +252,25 @@ public class PlayerController : MonoBehaviour
         
         if (jumps > 0)
         {
+            //xue qing's version
             isJump = true;
+            canJump = true;
             jumpFX.SetActive(true);
             jumpFX.transform.position = transform.position + new Vector3(0, -0.45f, 0);
             newVelocity.Set(0, 0);
             rb.velocity = newVelocity;
             newForce.Set(0,jumpForce);
             rb.AddForce(newForce,ForceMode2D.Impulse);
-            // rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
             rb.gravityScale = 4;
-            
+            //---
+            //sid's version
             // Vector2 v2Velocity = rb.velocity;
             // rb.velocity = new Vector2(move.x, 0); // stops player from falling down, allowing for a verticle jump when falling
             // rb.velocity = new Vector2(move.x + v2Velocity.x, jumpForce * 100 * Time.fixedDeltaTime);
             // Debug.Log("Jump");
             jumps--;
         }
-        
-        
     }
     
 
