@@ -1,9 +1,11 @@
+using System;
 using UnityEngine;
 
 public class CollectionData
 {
     private int appleCount;
     private int bananaCount;
+    private int isPlayer;
 
     public int AppleCount
     {
@@ -29,4 +31,16 @@ public class CollectionData
             MessageCenter.Instance.SendMessage(MessageName.MSG_BANANA_COLLECT, new MessageData(bananaCount));
         }
     }
+
+    public int IsPlayer
+   {
+       get => isPlayer;
+       set
+       {
+           isPlayer = value;
+           MessageCenter.Instance.SendMessage(MessageName.MSG_BOOL_PLAYER, new MessageData(isPlayer));
+       }
+   }
+
+    //MessageCenter.Instance.SendMessage(MessageName.MSG_BOOL_PLAYER, new MessageData(isPlayer));
 }

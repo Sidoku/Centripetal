@@ -7,12 +7,14 @@ using Vector3 = UnityEngine.Vector3;
 public class PlayerController : MonoBehaviour
 {
     [Header("Player in the room")] 
-    public GameObject Bag;
+    // public GameObject Bag;
     public bool hasBag;
     public bool hasYoyo;
     public static PlayerController Instance;
     public float speed, jumpForce;
-    
+    public int slopeSpeed;
+    public int speedZoneSpeed;
+    public int playerGravityScale;
     [Header("Player State")] 
     public float health;
     public bool isDead;
@@ -82,7 +84,8 @@ public class PlayerController : MonoBehaviour
 
     #endregion
     #region private members
-    
+
+    private MessageTest _messageTest;
     private Rigidbody2D rb;
     private Animator _animator;
     public float horizontalInput;
@@ -123,7 +126,8 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-        Bag.SetActive(false);
+        _messageTest = FindObjectOfType<MessageTest>();
+        // Bag.SetActive(false);
         bc2D = GetComponent<CapsuleCollider2D>();
         rb = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
@@ -139,6 +143,11 @@ public class PlayerController : MonoBehaviour
         //     return;
         // }
         // InputCheck();
+        if (_messageTest.isPlayer == 1)
+        {
+            rb.constraints = RigidbodyConstraints2D.FreezePositionX;
+            playerGravityScale = 8;
+        }
     }
 
     private void FixedUpdate()
@@ -182,8 +191,6 @@ public class PlayerController : MonoBehaviour
         {
             IsPlatform();
         }
-
-      
     }
 
     private void Movement()
@@ -219,6 +226,10 @@ public class PlayerController : MonoBehaviour
             transform.localScale = new Vector3(horizontalInput, 1, 1);
             leftRunFX.SetActive(false);
         }
+        // else if (horizontalInput != 0 && !isGround)
+        // {
+        //     leftRunFX.SetActive(false);
+        // }
 
         rb.velocity = new Vector2(horizontalInput * speed, rb.velocity.y);
         
@@ -263,7 +274,7 @@ public class PlayerController : MonoBehaviour
             newForce.Set(0,jumpForce);
             rb.AddForce(newForce,ForceMode2D.Impulse);
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-            rb.gravityScale = 8;
+            rb.gravityScale = playerGravityScale;
             //---
             //sid's version
             // Vector2 v2Velocity = rb.velocity;
@@ -323,7 +334,7 @@ public class PlayerController : MonoBehaviour
         }
         else if (!isJump && !isGround)//上平台之后修复重力变成1
         {
-            rb.gravityScale = 8;
+            rb.gravityScale = playerGravityScale;
         }
 
         if (rb.velocity.y <= 0.0f)
@@ -488,12 +499,12 @@ public class PlayerController : MonoBehaviour
 
         if (collider.gameObject.tag == "Slope")
         {
-            speed = 30;
+            speed = slopeSpeed;
         }
 
         if (collider.gameObject.CompareTag("SpeedZone"))
         {
-            speed = 40;
+            speed = speedZoneSpeed;
         }
     }
 

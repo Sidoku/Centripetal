@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7864181869606151209}
   - component: {fileID: 1560022606}
   - component: {fileID: 1794675045898399577}
-  m_Layer: 6
+  m_Layer: 13
   m_Name: Bus
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1209378657
-  m_SortingLayer: 1
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
   m_Color: {r: 0.5611345, g: 0.45803666, b: 0.6886792, a: 1}
