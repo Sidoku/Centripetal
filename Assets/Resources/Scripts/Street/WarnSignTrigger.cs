@@ -20,7 +20,12 @@ public class WarnSignTrigger : MonoBehaviour
         
         test = FindObjectOfType<MessageTest>();
     }
-    
+
+    private void Update()
+    {
+       
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))

@@ -21,7 +21,7 @@ public class MessageTest : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(isPlayer);
+        // Debug.Log(isPlayer);
     }
 
     private void OnDestroy()
