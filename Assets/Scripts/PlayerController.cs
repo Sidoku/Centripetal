@@ -25,8 +25,6 @@ public class PlayerController : MonoBehaviour
 
 
 
-
-
     private void OnEnable()
     {
         controls.Player.Enable();
@@ -57,12 +55,6 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     private void FixedUpdate() //made this public and moved it from the bottom
@@ -97,7 +89,7 @@ public class PlayerController : MonoBehaviour
             Vector2 v2Velocity = rb.velocity;
             rb.velocity = new Vector2(move.x, 0); // stops player from falling down, allowing for a verticle jump when falling
             rb.velocity = new Vector2(move.x + v2Velocity.x, jumpForce * 100 * Time.fixedDeltaTime);
-            Debug.Log("Jump");
+            //Debug.Log("Jump");
             jumps--;
         }
         if (jumps == 0)
