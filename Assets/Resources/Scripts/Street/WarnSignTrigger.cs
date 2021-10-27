@@ -7,10 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class WarnSignTrigger : MonoBehaviour
 {
-
-    public Transform NewFollowTransform;
-    // public CinemachineVirtualCamera vCamera;
-
+    
     private int isPlayer;
 
     private MessageTest test;

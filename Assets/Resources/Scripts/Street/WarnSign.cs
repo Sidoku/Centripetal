@@ -51,7 +51,9 @@ public class WarnSign : MonoBehaviour
     {
         int pointID = Random.Range(0, 3);
         int objectID = Random.Range(0, 2);
-        tempObstacles = Instantiate(ObstacleObjects[objectID],InstantiatePoints[pointID]);
+        tempObstacles = Instantiate(ObstacleObjects[objectID], InstantiatePoints[pointID].position, Quaternion.identity);
+        tempObstacles.transform.parent = null;
+        Debug.Log(InstantiatePoints[0].position.x);
         obstacleNumber++;
         startInstantiateObstacles = true;
     }
