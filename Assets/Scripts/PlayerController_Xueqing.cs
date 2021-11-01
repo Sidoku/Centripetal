@@ -1,16 +1,12 @@
-using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using Vector2 = UnityEngine.Vector2;
-using Vector3 = UnityEngine.Vector3;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController_Xueqing : MonoBehaviour
 {
     [Header("Player in the room")] 
     // public GameObject Bag;
-    public bool hasBag;
-    public bool hasYoyo;
-    public static PlayerController Instance;
+    public static PlayerController_Xueqing Instance;
     public float speed, jumpForce;
     public int slopeSpeed;
     public int speedZoneSpeed;
@@ -23,32 +19,22 @@ public class PlayerController : MonoBehaviour
     public bool isGround;
     public bool isJump;
     public bool canJump;
-    public bool canJump2;
-    public bool jumpTwice;
-    public bool isIdle;
-    public bool isPlatform;
+    // public bool isPlatform;
     [Header("Ground Check")] 
     
-    public Transform groundCheck,platformCheck;
-    public LayerMask groundLayer, platformLayer,slopeLayer;
-    public float downTime;
+    public Transform groundCheck;
+    public LayerMask groundLayer,slopeLayer;
     public float checkRadius;
     [Header("FX Check")] 
     
     public GameObject jumpFX;
     public GameObject fallFX;
     public GameObject leftRunFX;
-    [Header("Wall Run")] 
-    public float playerHeight;
-
+    
     [Header("Slope Function")] 
     public float slopeCheckDistance;
-    public float slopeCheckDistanceHorizontal;
-    public GameObject wallCheckPoint;
-
-    [SerializeField] 
+    
     private Vector2 colliderSize;
-
     private Vector2 newVelocity;//new move & jump method
     private Vector2 newForce;
     private float slopeDownAngle;
@@ -58,14 +44,12 @@ public class PlayerController : MonoBehaviour
     
     [SerializeField]
     private bool isOnSlope;
-
     private bool isJumping;
+    private CapsuleCollider2D bc2D;
 
     public PhysicsMaterial2D noFriction;
     public PhysicsMaterial2D fullFriction;
-
-    private CapsuleCollider2D bc2D;
-
+    
     #region Sid's movement
 
     InputMaster controls;
@@ -153,46 +137,37 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        horizontalInput = Input.GetAxisRaw("Horizontal");
-        verticalInput = Input.GetAxisRaw("Vertical");
-        if (isDead)
-        {
-            rb.velocity = Vector2.zero;
-            return;
-        }
+        rb.AddForce(new Vector2(move.x * speed * Time.fixedDeltaTime, move.y), ForceMode2D.Impulse);
+        // horizontalInput = Input.GetAxisRaw("Horizontal");
+        // verticalInput = Input.GetAxisRaw("Vertical");
         PhysicsCheck();
-        // if (Mechanics.Instance.isMechanic_2)
-        // {
-        //     return;
-        // }
         Movement();
         SlopeCheck();
     }
 
-    private void InputCheck()
-    {
-        if (Input.GetButtonDown("Jump"))
-        {
-            if (isGround || isOnSlope)
-            {
-                Jump();
-                canJump = true;
-                canJump2 = true;
-            }
-            // else if (canJump2)
-            // {
-            //     JumpTwice();
-            //     canJump2 = false;
-            //     jumpFX.SetActive(false);
-            // }
-            
-        }
-        
-        if (Input.GetButtonDown("Vertical"))
-        {
-            IsPlatform();
-        }
-    }
+    // private void InputCheck()
+    // {
+    //     if (Input.GetButtonDown("Jump"))
+    //     {
+    //         if (isGround || isOnSlope)
+    //         {
+    //             Jump();
+    //             canJump = true;
+    //         }
+    //         // else if (canJump2)
+    //         // {
+    //         //     JumpTwice();
+    //         //     canJump2 = false;
+    //         //     jumpFX.SetActive(false);
+    //         // }
+    //         
+    //     }
+    //     
+    //     if (Input.GetButtonDown("Vertical"))
+    //     {
+    //         IsPlatform();
+    //     }
+    // }
 
     private void Movement()
     {
@@ -212,19 +187,19 @@ public class PlayerController : MonoBehaviour
         // rb.velocity = newVelocity;
 
 
-        if (horizontalInput == 0)
+        if (move.x == 0)
         {
             leftRunFX.SetActive(false);
         }
 
-        if (horizontalInput != 0 && isGround)
+        if (move.x != 0 && isGround)
         {
             leftRunFX.SetActive(true);
-            transform.localScale = new Vector3(horizontalInput, 1, 1);
+            transform.localScale = new Vector3(move.x, 1, 1);
         }
-        else if (horizontalInput != 0 && isJump)
+        else if (move.x != 0 && isJump)
         {
-            transform.localScale = new Vector3(horizontalInput, 1, 1);
+            transform.localScale = new Vector3(move.x, 1, 1);
             leftRunFX.SetActive(false);
         }
         // else if (horizontalInput != 0 && !isGround)
@@ -232,7 +207,7 @@ public class PlayerController : MonoBehaviour
         //     leftRunFX.SetActive(false);
         // }
 
-        rb.velocity = new Vector2(horizontalInput * speed, rb.velocity.y);
+        // rb.velocity = new Vector2(move.x * speed, rb.velocity.y);
         
         //slope judgement
          // if (isGround)
@@ -243,7 +218,7 @@ public class PlayerController : MonoBehaviour
          // }
          if (isOnSlope && !canJump)
          {
-             newVelocity.Set(-horizontalInput * speed * slopeNormalPerpendicular.x, -horizontalInput * speed * slopeNormalPerpendicular.y);
+             newVelocity.Set(-move.x * speed * slopeNormalPerpendicular.x, -move.x * speed * slopeNormalPerpendicular.y);
              rb.velocity = newVelocity;
              Debug.Log("22");
              //infinity jump method
@@ -323,15 +298,15 @@ public class PlayerController : MonoBehaviour
     private void PhysicsCheck()
     {
         var position = groundCheck.position;
-        var position1 = platformCheck.transform.position;
+        // var position1 = platformCheck.transform.position;
         isGround = Physics2D.OverlapCircle(position, checkRadius, groundLayer)
-                   || Physics2D.OverlapCircle(position1, checkRadius, slopeLayer);
-        isPlatform = Physics2D.OverlapCircle(position1, 0.02f, platformLayer);
+                   || Physics2D.OverlapCircle(position, checkRadius, slopeLayer);
+        // isPlatform = Physics2D.OverlapCircle(position1, 0.02f, platformLayer);
         if (isGround)
         {
             rb.gravityScale = 1;
             isJump = false;
-            jumpTwice = false;
+            // jumpTwice = false;
         }
         else if (!isJump && !isGround)//上平台之后修复重力变成1
         {
@@ -356,30 +331,30 @@ public class PlayerController : MonoBehaviour
 
     #region 下落检测方法
 
-    private void IsPlatform()
-    {
-        verticalInput = Input.GetAxis("Vertical");
-        if (isPlatform && verticalInput == 0f)//按下了下落键
-        {
-            // _animator.SetTrigger("fall");
-            gameObject.layer = LayerMask.NameToLayer("OneWayPlatform");
-            Invoke(nameof(RestoreLayer),downTime);
-        }
-        
-    }
+    // private void IsPlatform()
+    // {
+    //     verticalInput = Input.GetAxis("Vertical");
+    //     if (isPlatform && verticalInput == 0f)//按下了下落键
+    //     {
+    //         // _animator.SetTrigger("fall");
+    //         gameObject.layer = LayerMask.NameToLayer("OneWayPlatform");
+    //         Invoke(nameof(RestoreLayer),downTime);
+    //     }
+    //     
+    // }
 
-    public void RestoreLayer()
-    {
-        isGround = false;
-        if (!isGround && gameObject.layer != LayerMask.NameToLayer("Player"))
-        {
-            gameObject.layer = LayerMask.NameToLayer("Player");
-        }
-        else
-        {
-            gameObject.layer = LayerMask.NameToLayer("Player");
-        }
-    }
+    // public void RestoreLayer()
+    // {
+    //     isGround = false;
+    //     if (!isGround && gameObject.layer != LayerMask.NameToLayer("Player"))
+    //     {
+    //         gameObject.layer = LayerMask.NameToLayer("Player");
+    //     }
+    //     else
+    //     {
+    //         gameObject.layer = LayerMask.NameToLayer("Player");
+    //     }
+    // }
 
     #endregion
     
@@ -493,42 +468,29 @@ public class PlayerController : MonoBehaviour
             boost = maxBoost;
         }
         
-        if (collider.gameObject.tag == "Ground")
-        {
-            speed = 12;
-        }
-
-        if (collider.gameObject.tag == "Slope")
-        {
-            speed = slopeSpeed;
-        }
-
-        if (collider.gameObject.CompareTag("SpeedZone"))
-        {
-            speed = speedZoneSpeed;
-        }
+        // if (collider.gameObject.tag == "Ground")
+        // {
+        //     speed = 12;
+        // }
+        //
+        // if (collider.gameObject.tag == "Slope")
+        // {
+        //     speed = slopeSpeed;
+        // }
+        //
+        // if (collider.gameObject.CompareTag("SpeedZone"))
+        // {
+        //     speed = speedZoneSpeed;
+        // }
     }
 
     #endregion
 
-    private void OnCollisionExit2D(Collision2D other)
-    {
-        if (other.gameObject.CompareTag("Ground"))
-        {
-            speed = 8;
-        }
-    }
-    // private void OnTriggerEnter2D(Collider2D other)
+    // private void OnCollisionExit2D(Collision2D other)
     // {
-    //     if (other.gameObject.CompareTag("Diamond"))//这么写是为了防止吃宝石数量错误 通过下面的调用来增加宝石数量。
+    //     if (other.gameObject.CompareTag("Ground"))
     //     {
-    //         other.GetComponent<Animator>().Play("DiamondCollected");//必须要这么写 否则会在吃宝石1的时候 触发宝石2的动画 然后报错宝石1的animator空引用
-    //         
+    //         speed = 8;
     //     }
-    // }
-    
-    // public void CollectCoin()//在CollectCoin中使用
-    // {
-    //     CoinUI.instance.currentCoinNumber += 1;
     // }
 }
