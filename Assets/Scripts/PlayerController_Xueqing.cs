@@ -4,56 +4,51 @@ using UnityEngine;
 
 public class PlayerController_Xueqing : MonoBehaviour
 {
-    [Header("Player in the room")] 
+    [Header("Player in the room")]
     // public GameObject Bag;
     public static PlayerController_Xueqing Instance;
+
     public float speed, jumpForce;
-    public int slopeSpeed;
-    public int speedZoneSpeed;
     public int playerGravityScale;
-    [Header("Player State")] 
-    public float health;
-    public bool isDead;
-    
-    [Header("States Check")] 
-    public bool isGround;
+    // [Header("Player State")] 
+    // public float health;
+    // public bool isDead;
+
+    [Header("States Check")] public bool isGround;
     public bool isJump;
     public bool canJump;
+
     // public bool isPlatform;
-    [Header("Ground Check")] 
-    
-    public Transform groundCheck;
-    public LayerMask groundLayer,slopeLayer;
+    [Header("Ground Check")] public Transform groundCheck;
+    public LayerMask groundLayer, slopeLayer;
     public float checkRadius;
-    [Header("FX Check")] 
-    
-    public GameObject jumpFX;
+    [Header("FX Check")] public GameObject jumpFX;
     public GameObject fallFX;
     public GameObject leftRunFX;
-    
-    [Header("Slope Function")] 
-    public float slopeCheckDistance;
-    
+
+    [Header("Slope Function")] public float slopeCheckDistance;
+
     private Vector2 colliderSize;
-    private Vector2 newVelocity;//new move & jump method
+    private Vector2 newVelocity; //new move & jump method
     private Vector2 newForce;
     private float slopeDownAngle;
     private float slopeDownAngleOld;
     private float slopeSideAngle;
     private Vector2 slopeNormalPerpendicular;
-    
-    [SerializeField]
-    private bool isOnSlope;
+
+    [SerializeField] private bool isOnSlope;
     private bool isJumping;
     private CapsuleCollider2D bc2D;
 
     public PhysicsMaterial2D noFriction;
     public PhysicsMaterial2D fullFriction;
-    
+
     #region Sid's movement
 
     InputMaster controls;
+
     Vector2 move;
+
     //bool jump;
     //bool boost;
     public int boost;
@@ -64,23 +59,23 @@ public class PlayerController_Xueqing : MonoBehaviour
     public int jumps;
     public int maxJumps = 2;
     public int maxBoost = 1;
-    
 
     #endregion
+
     #region private members
 
     private MessageTest _messageTest;
     private Rigidbody2D rb;
     private Animator _animator;
     public float horizontalInput;
-    public float verticalInput;
-    
+
     private int animationCount;
+
     #endregion
 
     //买了几个技能的判断
     // private int _purchasedSkill;
-    
+
     private void OnEnable()
     {
         controls.Player.Enable();
@@ -90,6 +85,7 @@ public class PlayerController_Xueqing : MonoBehaviour
     {
         controls.Player.Disable();
     }
+
     private void Awake()
     {
         Instance = this;
@@ -105,7 +101,6 @@ public class PlayerController_Xueqing : MonoBehaviour
 
         controls.Player.Boost.performed += ctx => this.Boost();
         //controls.Player.Boost.canceled += ctx => boost = false; //removed ability to cancel boost, was doing it too often
-
     }
 
     void Start()
@@ -120,73 +115,19 @@ public class PlayerController_Xueqing : MonoBehaviour
 
     void Update()
     {
-        // if (isDead)
-        // {
-        //     // _animator.SetBool("dead",isDead);
-        //     _animator.SetTrigger("Dead");
-        //     return;
-        // }
-        // InputCheck();
-        //
-        // if (_messageTest.isPlayer == 1)
-        // {
-        //     rb.constraints = RigidbodyConstraints2D.FreezePositionX;
-        //     playerGravityScale = 8;
-        // }
+        
     }
 
     private void FixedUpdate()
     {
         rb.AddForce(new Vector2(move.x * speed * Time.fixedDeltaTime, move.y), ForceMode2D.Impulse);
-        // horizontalInput = Input.GetAxisRaw("Horizontal");
-        // verticalInput = Input.GetAxisRaw("Vertical");
         PhysicsCheck();
         Movement();
         SlopeCheck();
     }
-
-    // private void InputCheck()
-    // {
-    //     if (Input.GetButtonDown("Jump"))
-    //     {
-    //         if (isGround || isOnSlope)
-    //         {
-    //             Jump();
-    //             canJump = true;
-    //         }
-    //         // else if (canJump2)
-    //         // {
-    //         //     JumpTwice();
-    //         //     canJump2 = false;
-    //         //     jumpFX.SetActive(false);
-    //         // }
-    //         
-    //     }
-    //     
-    //     if (Input.GetButtonDown("Vertical"))
-    //     {
-    //         IsPlatform();
-    //     }
-    // }
-
+    
     private void Movement()
     {
-        // if (isGround)
-        // {
-        //     rb.velocity = new Vector2(horizontalInput * speed, rb.velocity.y);
-        // }
-        //
-        // if (isGround && isOnSlope)
-        // {
-        //     // newVelocity.Set(horizontalInput * speed, rb.velocity.y);
-        //     newVelocity.Set(-horizontalInput * speed * slopeNormalPerpendicular.x, horizontalInput * speed * slopeNormalPerpendicular.y);
-        //     rb.velocity = newVelocity;
-        // }
-        
-        // newVelocity.Set(horizontalInput * speed, rb.velocity.y);
-        // rb.velocity = newVelocity;
-
-
         if (move.x == 0)
         {
             leftRunFX.SetActive(false);
@@ -202,33 +143,15 @@ public class PlayerController_Xueqing : MonoBehaviour
             transform.localScale = new Vector3(move.x, 1, 1);
             leftRunFX.SetActive(false);
         }
-        // else if (horizontalInput != 0 && !isGround)
-        // {
-        //     leftRunFX.SetActive(false);
-        // }
 
-        // rb.velocity = new Vector2(move.x * speed, rb.velocity.y);
-        
-        //slope judgement
-         // if (isGround)
-         // {
-         //     newVelocity.Set(horizontalInput * speed, rb.velocity.y);
-         //     rb.velocity = newVelocity;
-         //     Debug.Log("111");
-         // }
-         if (isOnSlope && !canJump)
-         {
-             newVelocity.Set(-move.x * speed * slopeNormalPerpendicular.x, -move.x * speed * slopeNormalPerpendicular.y);
-             rb.velocity = newVelocity;
-             Debug.Log("22");
-             //infinity jump method
-         }
-         // else if (!isGround)
-         // {
-         //     newVelocity.Set(horizontalInput * speed, rb.velocity.y);
-         //     rb.velocity = newVelocity;
-         //     Debug.Log("33");
-         // }
+        if (isOnSlope && !canJump)
+        {
+            rb.AddForce(new Vector2(-move.x * speed * slopeNormalPerpendicular.x * Time.fixedDeltaTime, -move.x * speed * slopeNormalPerpendicular.y * Time.fixedDeltaTime), ForceMode2D.Impulse);
+            // newVelocity.Set(-move.x * speed * slopeNormalPerpendicular.x, -move.x * speed * slopeNormalPerpendicular.y);
+            // // newVelocity.Set(-move.x * speed * slopeNormalPerpendicular.x * Time.fixedDeltaTime, -move.x * speed * slopeNormalPerpendicular.y * Time.fixedDeltaTime);
+            // rb.velocity = newVelocity;
+            Debug.Log("22");
+        }
     }
 
     void Jump()
@@ -237,7 +160,7 @@ public class PlayerController_Xueqing : MonoBehaviour
         {
             return;
         }
-        
+
         if (jumps > 0)
         {
             //xue qing's version
@@ -245,51 +168,15 @@ public class PlayerController_Xueqing : MonoBehaviour
             canJump = true;
             jumpFX.SetActive(true);
             jumpFX.transform.position = transform.position + new Vector3(0, -0.45f, 0);
-            newVelocity.Set(0, 0);
-            rb.velocity = newVelocity;
-            newForce.Set(0,jumpForce);
-            rb.AddForce(newForce,ForceMode2D.Impulse);
-            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+            Vector2 v2Velocity = rb.velocity;
+            rb.velocity = new Vector2(move.x, 0); // stops player from falling down, allowing for a verticle jump when falling
+            rb.velocity = new Vector2(move.x + v2Velocity.x, jumpForce * 100 * Time.fixedDeltaTime);
             rb.gravityScale = playerGravityScale;
-            //---
-            //sid's version
-            // Vector2 v2Velocity = rb.velocity;
-            // rb.velocity = new Vector2(move.x, 0); // stops player from falling down, allowing for a verticle jump when falling
-            // rb.velocity = new Vector2(move.x + v2Velocity.x, jumpForce * 100 * Time.fixedDeltaTime);
-            // Debug.Log("Jump");
             jumps--;
         }
     }
     
-
-    void WallRunCheck()
-    {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, new Vector2(2, 0), 2f,groundLayer);
-        if (!hit.collider.CompareTag("Wall"))
-            return;
-        Debug.Log("hello"); 
-        _animator.SetTrigger("wallJump");
-
-        // RaycastHit2D[] hit2D = Physics2D.RaycastAll(transform.position, new Vector2(0, -1f), groundLayer);
-        // foreach (var items in hit2D)
-        // {
-        //     if (items.collider.CompareTag("Platforms"))
-        //     {
-        //         if (Mathf.Abs(transform.position.y - items.collider.transform.position.y) > 0)
-        //         {
-        //             Debug.Log(transform.position.y-items.collider.transform.position.y);
-        //             items.collider.enabled = false;
-        //             Debug.Log("player"+transform.position);
-        //             Debug.Log("obj"+items.collider.transform.position);
-        //         }
-        //         items.collider.enabled = true;
-        //         //     isPlatform = true;
-        //       
-        //     }
-        // }
-    }
-
-    public void FallFXFinish()//animation event
+    public void FallFXFinish() //animation event
     {
         fallFX.SetActive(true);
         fallFX.transform.position = transform.position + new Vector3(0, -0.75f, 0);
@@ -308,7 +195,7 @@ public class PlayerController_Xueqing : MonoBehaviour
             isJump = false;
             // jumpTwice = false;
         }
-        else if (!isJump && !isGround)//上平台之后修复重力变成1
+        else if (!isJump && !isGround) //上平台之后修复重力变成1
         {
             rb.gravityScale = playerGravityScale;
         }
@@ -317,6 +204,7 @@ public class PlayerController_Xueqing : MonoBehaviour
         {
             canJump = false;
         }
+
         // else if (isOnSlope && !isGround)
         // {
         //     rb.gravityScale = 100;
@@ -325,55 +213,6 @@ public class PlayerController_Xueqing : MonoBehaviour
         // {
         //     Debug.DrawRay(transform.position,grabDir);
         // }
-         
-    }
-    
-
-    #region 下落检测方法
-
-    // private void IsPlatform()
-    // {
-    //     verticalInput = Input.GetAxis("Vertical");
-    //     if (isPlatform && verticalInput == 0f)//按下了下落键
-    //     {
-    //         // _animator.SetTrigger("fall");
-    //         gameObject.layer = LayerMask.NameToLayer("OneWayPlatform");
-    //         Invoke(nameof(RestoreLayer),downTime);
-    //     }
-    //     
-    // }
-
-    // public void RestoreLayer()
-    // {
-    //     isGround = false;
-    //     if (!isGround && gameObject.layer != LayerMask.NameToLayer("Player"))
-    //     {
-    //         gameObject.layer = LayerMask.NameToLayer("Player");
-    //     }
-    //     else
-    //     {
-    //         gameObject.layer = LayerMask.NameToLayer("Player");
-    //     }
-    // }
-
-    #endregion
-    
-    
-
-    public void GetHit(float damage)
-    {
-        //玩家收到伤害之后播放完受伤动画之后再少血
-        //算是可以模拟一个受伤之后无敌的效果
-        if (!_animator.GetCurrentAnimatorStateInfo(1).IsName("player_hit"))
-        {
-            health -= damage;
-            if (health < 1)
-            {
-                health = 0;
-                isDead = true;
-            }
-            _animator.SetTrigger("hit");
-        }
     }
 
     #region Slope Logic
@@ -405,7 +244,7 @@ public class PlayerController_Xueqing : MonoBehaviour
             isOnSlope = false;
         }
     }
-    
+
     private void SlopeCheckVertical(Vector2 checkPos)
     {
         RaycastHit2D hit = Physics2D.Raycast(checkPos, Vector2.down, slopeCheckDistance, slopeLayer);
@@ -413,7 +252,7 @@ public class PlayerController_Xueqing : MonoBehaviour
         {
             slopeNormalPerpendicular = Vector2.Perpendicular(hit.normal).normalized;
 
-            slopeDownAngle = Vector2.Angle(hit.normal, Vector2.up);//angle between x-axis and the slope y-axis
+            slopeDownAngle = Vector2.Angle(hit.normal, Vector2.up); //angle between x-axis and the slope y-axis
 
             if (slopeDownAngle != slopeDownAngleOld)
             {
@@ -421,12 +260,12 @@ public class PlayerController_Xueqing : MonoBehaviour
             }
 
             slopeDownAngleOld = slopeDownAngle;
-            
-            Debug.DrawRay(hit.point,slopeNormalPerpendicular,Color.red);
-            Debug.DrawRay(hit.point,hit.normal,Color.blue);
+
+            Debug.DrawRay(hit.point, slopeNormalPerpendicular, Color.red);
+            Debug.DrawRay(hit.point, hit.normal, Color.blue);
         }
-        
-        if (isOnSlope && horizontalInput == 0f)
+
+        if (isOnSlope && move.x == 0f)
         {
             rb.sharedMaterial = fullFriction;
         }
@@ -436,8 +275,6 @@ public class PlayerController_Xueqing : MonoBehaviour
         }
     }
 
-   
-    
     #endregion
 
     #region Sid's logic
@@ -449,25 +286,26 @@ public class PlayerController_Xueqing : MonoBehaviour
             Vector2 v2Velocity01 = rb.velocity;
             if (move.x < 0) //move.x is positive when moving right, move.x is negative when moving left
             {
-                
                 rb.velocity = Vector2.left * boostForce + v2Velocity01;
             }
             else
             {
                 rb.velocity = Vector2.right * boostForce + v2Velocity01;
             }
+
             boost--;
         }
     }
-    
+
     void OnCollisionEnter2D(Collision2D collider)
     {
-        if (collider.gameObject.tag == "Ground" || collider.gameObject.tag == "Slope" || collider.gameObject.tag == "SpeedZone")
+        if (collider.gameObject.tag == "Ground" || collider.gameObject.tag == "Slope" ||
+            collider.gameObject.tag == "SpeedZone")
         {
             jumps = maxJumps;
             boost = maxBoost;
         }
-        
+
         // if (collider.gameObject.tag == "Ground")
         // {
         //     speed = 12;
