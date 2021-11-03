@@ -15,7 +15,7 @@ public class FirstFindYoyo : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            PlayerController.Instance.hasYoyo = true;
+            // PlayerController.Instance.hasYoyo = true;
             Destroy(gameObject);
         }
     }

@@ -28,7 +28,7 @@ public class Fire : MonoBehaviour
             {
                 isPlayer = true;
                 _animator.SetBool("isPlayer",true);
-                PlayerController.Instance.isDead = true;
+                // PlayerController.Instance.isDead = true;
                 StartCoroutine("PlayerCome");
             }
         }

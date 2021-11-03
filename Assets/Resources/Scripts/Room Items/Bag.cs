@@ -16,7 +16,7 @@ public class Bag : MonoBehaviour
         {
             Destroy(gameObject);
             // PlayerController.Instance.Bag.SetActive(true);
-            PlayerController.Instance.hasBag = true;
+            // PlayerController.Instance.hasBag = true;
         }
     }
 }

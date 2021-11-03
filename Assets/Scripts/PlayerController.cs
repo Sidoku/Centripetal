@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController_Xueqing : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
     [Header("Player in the room")]
     // public GameObject Bag;
-    public static PlayerController_Xueqing Instance;
+    public static PlayerController Instance;
 
     public float speed, jumpForce;
     public int playerGravityScale;

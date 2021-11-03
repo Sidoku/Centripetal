@@ -19,13 +19,13 @@ public class TriggerCollections : MonoBehaviour
                 {
                     Destroy(gameObject);
                     // PlayerController.Instance.Bag.SetActive(true);
-                    PlayerController.Instance.hasBag = true;
+                    // PlayerController.Instance.hasBag = true;
                 }
                 break;
             case "CollectedYoyo":
                 if (other.CompareTag("Player"))
                 {
-                    PlayerController.Instance.hasYoyo = true;
+                    // PlayerController.Instance.hasYoyo = true;
                     Destroy(gameObject);
                 }
                 break;

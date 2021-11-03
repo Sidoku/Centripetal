@@ -62,7 +62,7 @@ public class Turkey : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            PlayerController.Instance.isDead = true;
+            // PlayerController.Instance.isDead = true;
         }
     }
     
