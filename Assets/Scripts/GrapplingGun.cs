@@ -22,6 +22,7 @@ public class GrapplingGun : MonoBehaviour
     public Transform gunHolder;
     public Transform gunPivot;
     public Transform firePoint;
+    public Transform DestinationPoint;
 
     [Header("Physics Ref:")]
     public SpringJoint2D m_springJoint2D;
@@ -138,6 +139,8 @@ public class GrapplingGun : MonoBehaviour
             }
         }
     }
+    
+    
 
     public void Grapple()
     {

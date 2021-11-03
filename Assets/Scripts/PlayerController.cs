@@ -150,7 +150,6 @@ public class PlayerController : MonoBehaviour
             // newVelocity.Set(-move.x * speed * slopeNormalPerpendicular.x, -move.x * speed * slopeNormalPerpendicular.y);
             // // newVelocity.Set(-move.x * speed * slopeNormalPerpendicular.x * Time.fixedDeltaTime, -move.x * speed * slopeNormalPerpendicular.y * Time.fixedDeltaTime);
             // rb.velocity = newVelocity;
-            Debug.Log("22");
         }
     }
 
