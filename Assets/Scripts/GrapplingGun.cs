@@ -11,6 +11,7 @@ public class GrapplingGun : MonoBehaviour
     [Header("Scripts Ref:")]
     public GrapplingRope grappleRope;
 
+    public bool isGrappled; //check if player really grapple the point, if is grappled, activate the grapple point animation
     [Header("Layers Settings:")]
     [SerializeField] private bool grappleToAll = false;
     [SerializeField] private int grappableLayerNumber = 9;
@@ -22,7 +23,7 @@ public class GrapplingGun : MonoBehaviour
     public Transform gunHolder;
     public Transform gunPivot;
     public Transform firePoint;
-    public Transform DestinationPoint;
+    public Vector2 DestinationPoint;
 
     [Header("Physics Ref:")]
     public SpringJoint2D m_springJoint2D;
@@ -122,22 +123,70 @@ public class GrapplingGun : MonoBehaviour
         }
     }
 
+    // void SetGrapplePoint()
+    // {
+    //     Vector2 distanceVector = m_camera.ScreenToWorldPoint(Input.mousePosition) - gunPivot.position;
+    //     if (Physics2D.Raycast(firePoint.position, distanceVector.normalized))
+    //     {
+    //         RaycastHit2D _hit = Physics2D.Raycast(firePoint.position, distanceVector.normalized);
+    //         if (_hit.transform.gameObject.layer == grappableLayerNumber || grappleToAll)
+    //         {
+    //             
+    //             if (Vector2.Distance(_hit.point, firePoint.position) <= maxDistnace || !hasMaxDistance)
+    //             {
+    //                 // grapplePoint = _hit.point;
+    //                 grapplePoint = DestinationPoint;
+    //                 Debug.Log(grapplePoint);
+    //                 grappleDistanceVector = grapplePoint - (Vector2)gunPivot.position;
+    //                 if (grapplePoint.x == 0f || grapplePoint.y == 0f)
+    //                 {
+    //                     return;
+    //                 }
+    //                 grappleRope.enabled = true;
+    //             }
+    //         }
+    //     }
+    // }
+    
     void SetGrapplePoint()
     {
-        Vector2 distanceVector = m_camera.ScreenToWorldPoint(Input.mousePosition) - gunPivot.position;
-        if (Physics2D.Raycast(firePoint.position, distanceVector.normalized))
+        foreach (var points in GameController.Instance.grapplePoints)
         {
-            RaycastHit2D _hit = Physics2D.Raycast(firePoint.position, distanceVector.normalized);
-            if (_hit.transform.gameObject.layer == grappableLayerNumber || grappleToAll)
+            if (Vector2.Distance(transform.position,points.position) < 10f)
             {
-                if (Vector2.Distance(_hit.point, firePoint.position) <= maxDistnace || !hasMaxDistance)
+                // points.gameObject.GetComponent<Animator>().SetTrigger("isGrappled");
+                grapplePoint = points.position;
+                //             Debug.Log(grapplePoint);
+                grappleDistanceVector = grapplePoint - (Vector2)gunPivot.position;
+                if (grapplePoint.x == 0f || grapplePoint.y == 0f)
                 {
-                    grapplePoint = _hit.point;
-                    grappleDistanceVector = grapplePoint - (Vector2)gunPivot.position;
-                    grappleRope.enabled = true;
+                    return;
                 }
+                grappleRope.enabled = true;
+                isGrappled = true;
             }
         }
+        // Vector2 distanceVector = m_camera.ScreenToWorldPoint(Input.mousePosition) - gunPivot.position;
+        // if (Physics2D.Raycast(firePoint.position, distanceVector.normalized))
+        // {
+        //     RaycastHit2D _hit = Physics2D.Raycast(firePoint.position, distanceVector.normalized);
+        //     if (_hit.transform.gameObject.layer == grappableLayerNumber || grappleToAll)
+        //     {
+        //         
+        //         if (Vector2.Distance(_hit.point, firePoint.position) <= maxDistnace || !hasMaxDistance)
+        //         {
+        //             // grapplePoint = _hit.point;
+        //             grapplePoint = DestinationPoint;
+        //             Debug.Log(grapplePoint);
+        //             grappleDistanceVector = grapplePoint - (Vector2)gunPivot.position;
+        //             if (grapplePoint.x == 0f || grapplePoint.y == 0f)
+        //             {
+        //                 return;
+        //             }
+        //             grappleRope.enabled = true;
+        //         }
+        //     }
+        // }
     }
     
     
