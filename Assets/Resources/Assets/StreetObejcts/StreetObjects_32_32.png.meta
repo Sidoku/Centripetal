@@ -14,6 +14,9 @@ TextureImporter:
   - first:
       213: 7636622824220111541
     second: StreetObjects_32_32_3
+  - first:
+      213: 4660564460157225549
+    second: StreetObjects_32_32_4
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -107,7 +110,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 32
+        y: 96
         width: 32
         height: 32
       alignment: 0
@@ -128,7 +131,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 32
-        y: 32
+        y: 96
         width: 32
         height: 32
       alignment: 0
@@ -149,7 +152,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
+        y: 64
         width: 32
         height: 32
       alignment: 0
@@ -170,7 +173,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 32
-        y: 0
+        y: 64
         width: 32
         height: 32
       alignment: 0
@@ -182,6 +185,27 @@ TextureImporter:
       bones: []
       spriteID: 5b2b7418ffbbaf960800000000000000
       internalID: 7636622824220111541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StreetObjects_32_32_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4a4b7c0fa6ada040800000000000000
+      internalID: 4660564460157225549
       vertices: []
       indices: 
       edges: []

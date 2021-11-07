@@ -23,6 +23,12 @@ TextureImporter:
   - first:
       213: -7449634703555904800
     second: StreetObejcts_16_16 1_6
+  - first:
+      213: 3173477942780781635
+    second: StreetObejcts_16_16 1_7
+  - first:
+      213: -3396624416845817190
+    second: StreetObejcts_16_16 1_8
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -254,6 +260,48 @@ TextureImporter:
       bones: []
       spriteID: 0eab02cf4b49d9890800000000000000
       internalID: -7449634703555904800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StreetObejcts_16_16 1_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3446cf900657a0c20800000000000000
+      internalID: 3173477942780781635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StreetObejcts_16_16 1_8
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9a9c76c614ccd0d0800000000000000
+      internalID: -3396624416845817190
       vertices: []
       indices: 
       edges: []
