@@ -43,11 +43,17 @@ public class PlayerController : MonoBehaviour
     public PhysicsMaterial2D noFriction;
     public PhysicsMaterial2D fullFriction;
 
+    [Header("YOYO Dash")] public bool isDash;
+    public float dashTimeLeft;//冲锋剩余时间
+    public float lastDashTime;//上次Dash的时间点
+    public float dashTime;//冲锋时间
+    public int dashSpeedX;//充分速度
+
     #region Sid's movement
 
     InputMaster controls;
 
-    Vector2 move;
+    public Vector2 move;
 
     //bool jump;
     //bool boost;
@@ -65,7 +71,7 @@ public class PlayerController : MonoBehaviour
     #region private members
 
     private MessageTest _messageTest;
-    private Rigidbody2D rb;
+    public Rigidbody2D rb;
     private Animator _animator;
     public float horizontalInput;
 
@@ -115,7 +121,10 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        
+        if (Time.time >= lastDashTime)
+        {
+            CanDash();
+        }
     }
 
     private void FixedUpdate()
@@ -213,6 +222,7 @@ public class PlayerController : MonoBehaviour
         //     Debug.DrawRay(transform.position,grabDir);
         // }
     }
+    
 
     #region Slope Logic
 
@@ -280,6 +290,11 @@ public class PlayerController : MonoBehaviour
 
     private void Boost() //Changed boost to be a int rather than bool. We can maybe make a level with multiple boosts
     {
+        // if (dashTimeLeft <= 0f)
+        // {
+        //     boost--;
+        // }
+        
         if (boost > 0)
         {
             Vector2 v2Velocity01 = rb.velocity;
@@ -293,7 +308,45 @@ public class PlayerController : MonoBehaviour
             }
 
             boost--;
+            // if (isDash)
+            // {
+            //     if (dashTimeLeft > 0f)
+            //     {
+            //         Vector2 v2Velocity01 = rb.velocity;
+            //         if (move.x < 0) //move.x is positive when moving right, move.x is negative when moving left
+            //         {
+            //             rb.velocity = Vector2.left * boostForce + v2Velocity01;
+            //             // rb.velocity = new Vector2(gameObject.transform.localScale.x * boostForce, rb.velocity.y);
+            //         }
+            //         else
+            //         {
+            //             rb.velocity = Vector2.right * boostForce + v2Velocity01;
+            //         }
+            //
+            //         Debug.Log("Dashing!!!!!!!");
+            //         dashTimeLeft -= Time.deltaTime;
+            //         ShadowPool.instance.GetObjectFromPool();
+            //     }
+            // }
+            // if (dashTimeLeft > 0f && isDash)
+            // {
+            //     ShadowPool.instance.SK_02();
+            //     // dashTimeLeft -= Time.deltaTime;
+            
+            //     // ShadowPool.instance.GetObjectFromPool();
+            // }
+            // ShadowPool.instance.GetObjectFromPool();
+
         }
+
+        
+    }
+
+    private void CanDash()
+    {
+        isDash = true;
+        dashTimeLeft = dashTime;
+        lastDashTime = Time.time;
     }
 
     void OnCollisionEnter2D(Collision2D collider)
@@ -303,6 +356,7 @@ public class PlayerController : MonoBehaviour
         {
             jumps = maxJumps;
             boost = maxBoost;
+            dashTimeLeft = 1;
         }
 
         // if (collider.gameObject.tag == "Ground")

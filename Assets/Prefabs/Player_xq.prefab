@@ -698,7 +698,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!231 &554937252767020088
 SpringJoint2D:
@@ -717,7 +717,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 23.773935
+  m_Distance: 25.561886
   m_DampingRatio: 1
   m_Frequency: 1
 --- !u!114 &554937252767020094
@@ -783,11 +783,18 @@ MonoBehaviour:
   isOnSlope: 0
   noFriction: {fileID: 6200000, guid: a196a80d3106247f2b333295040364df, type: 2}
   fullFriction: {fileID: 6200000, guid: 53ff4e6007b404ec8b0ae863fd27972c, type: 2}
+  isDash: 0
+  dashTimeLeft: 0
+  lastDashTime: 0
+  dashTime: 1
+  dashSpeedX: 10
+  move: {x: 0, y: 0}
   boost: 0
   boostForce: 7
   jumps: 0
   maxJumps: 2
   maxBoost: 1
+  rb: {fileID: 0}
   horizontalInput: 0
 --- !u!70 &554937252767020092
 CapsuleCollider2D:
