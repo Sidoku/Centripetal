@@ -7,7 +7,9 @@ public class PlatformMove : MonoBehaviour
     public Transform[] points;
     public int moveSpeed;
 
-    public int i;
+    private int i;
+
+    // private SpriteRenderer sprite;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +23,15 @@ public class PlatformMove : MonoBehaviour
         if (Vector2.Distance(transform.position,points[i].position) < 0.01f)
         {
             i = i == 0 ? 1 : 0;
+            // if (i == 0)
+            // {
+            //     sprite.flipX = false;
+            // }
+            // else
+            // {
+            //     sprite.flipX = true;
+            // }
+            
         }
        
     }
