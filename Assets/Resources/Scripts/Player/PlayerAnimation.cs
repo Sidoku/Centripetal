@@ -13,7 +13,6 @@ public class PlayerAnimation : MonoBehaviour
     {
         _animator = GetComponent<Animator>();
         _rigidbody2D = GetComponent<Rigidbody2D>();
-        _controller = GetComponent<PlayerController>();
     }
 
     // Update is called once per frame

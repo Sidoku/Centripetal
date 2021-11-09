@@ -145,13 +145,14 @@ public class PlayerController : MonoBehaviour
             if (move.x > 0)
             {
                 move.x = 1;
-                transform.localScale = new Vector3(move.x, 1, 1);
+                transform.localScale = new Vector3(move.x * transform.localScale.x, transform.localScale.y, transform.localScale.z);
+                // transform.localScale = new Vector3(move.x,1,1);
             }
             else if (move.x < 0)
             {
                 move.x = -1;
                 // transform.eulerAngles = new Vector3(0, 180, 0);
-                transform.localScale = new Vector3(move.x, 1, 1);
+                transform.localScale = new Vector3(move.x * transform.localScale.x, transform.localScale.y, transform.localScale.z);
             }
             
             // transform.localScale = new Vector3(move.x, 1, 1);
