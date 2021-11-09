@@ -143,14 +143,15 @@ public class PlayerController : MonoBehaviour
             if (move.x > 0)
             {
                 move.x = 1;
-                transform.localScale = new Vector3(move.x * transform.localScale.x, transform.localScale.y, transform.localScale.z);
+                transform.localScale = new Vector3(Mathf.Abs(move.x * transform.localScale.x), transform.localScale.y, transform.localScale.z);
                 // transform.localScale = new Vector3(move.x,1,1);
             }
             else if (move.x < 0)
             {
                 move.x = -1;
                 // transform.eulerAngles = new Vector3(0, 180, 0);
-                transform.localScale = new Vector3(move.x * transform.localScale.x, transform.localScale.y, transform.localScale.z);
+                transform.localScale = new Vector3(Mathf.Abs(move.x * transform.localScale.x) * -1,
+                    transform.localScale.y, transform.localScale.z);
             }
             
             // transform.localScale = new Vector3(move.x, 1, 1);
@@ -303,85 +304,24 @@ public class PlayerController : MonoBehaviour
         if (boost > 0)
         {
             dashFX.SetActive(true);
-            dashFX.transform.position = transform.position + new Vector3(-3f, 0, 0);
+            
             isClickedBoost = true;
             Vector2 v2Velocity01 = rb.velocity;
             if (move.x < 0) //move.x is positive when moving right, move.x is negative when moving left
             {
                 
                 rb.velocity = Vector2.left * boostForce + v2Velocity01;
+                dashFX.transform.position = transform.position + new Vector3(3f, 0, 0);
             }
             else
             {
                 rb.velocity = Vector2.right * boostForce + v2Velocity01;
+                dashFX.transform.position = transform.position + new Vector3(-3f, 0, 0);
             }
             boost--;
         }
-        //
-        // if (boost == 0)
-        // {
-        //     dashFX.SetActive(false);
-        //     // isClickedBoost = false;
-        // }
-        // if (dashTimeLeft <= 0f)
-        // {
-        //     boost--;
-        // }
-
-        // if (boost > 0)
-        // {
-        //     Vector2 v2Velocity01 = rb.velocity;
-        //     if (move.x < 0) //move.x is positive when moving right, move.x is negative when moving left
-        //     {
-        //         rb.velocity = Vector2.left * boostForce + v2Velocity01;
-        //     }
-        //     else
-        //     {
-        //         rb.velocity = Vector2.right * boostForce + v2Velocity01;
-        //     }
-        //
-        //     boost--;
-        //     // if (isDash)
-        //     // {
-        //     //     if (dashTimeLeft > 0f)
-        //     //     {
-        //     //         Vector2 v2Velocity01 = rb.velocity;
-        //     //         if (move.x < 0) //move.x is positive when moving right, move.x is negative when moving left
-        //     //         {
-        //     //             rb.velocity = Vector2.left * boostForce + v2Velocity01;
-        //     //             // rb.velocity = new Vector2(gameObject.transform.localScale.x * boostForce, rb.velocity.y);
-        //     //         }
-        //     //         else
-        //     //         {
-        //     //             rb.velocity = Vector2.right * boostForce + v2Velocity01;
-        //     //         }
-        //     //
-        //     //         Debug.Log("Dashing!!!!!!!");
-        //     //         dashTimeLeft -= Time.deltaTime;
-        //     //         ShadowPool.instance.GetObjectFromPool();
-        //     //     }
-        //     // }
-        //     // if (dashTimeLeft > 0f && isDash)
-        //     // {
-        //     //     ShadowPool.instance.SK_02();
-        //     //     // dashTimeLeft -= Time.deltaTime;
-        //     
-        //     //     // ShadowPool.instance.GetObjectFromPool();
-        //     // }
-        //     // ShadowPool.instance.GetObjectFromPool();
-        //
-        // }
-
 
     }
-
-    private void CanDash()
-    {
-        isDash = true;
-        dashTimeLeft = dashTime;
-        lastDashTime = Time.time;
-    }
-
     
     void OnCollisionEnter2D(Collision2D collider)
     {
@@ -390,32 +330,9 @@ public class PlayerController : MonoBehaviour
         {
             jumps = maxJumps;
             boost = maxBoost;
-            dashTimeLeft = 1;
         }
-
-        // if (collider.gameObject.tag == "Ground")
-        // {
-        //     speed = 12;
-        // }
-        //
-        // if (collider.gameObject.tag == "Slope")
-        // {
-        //     speed = slopeSpeed;
-        // }
-        //
-        // if (collider.gameObject.CompareTag("SpeedZone"))
-        // {
-        //     speed = speedZoneSpeed;
-        // }
     }
 
     #endregion
-
-    // private void OnCollisionExit2D(Collision2D other)
-    // {
-    //     if (other.gameObject.CompareTag("Ground"))
-    //     {
-    //         speed = 8;
-    //     }
-    // }
+    
 }

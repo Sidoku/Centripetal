@@ -19,7 +19,7 @@ public class PlayerAnimation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        _animator.SetFloat("speed",Mathf.Abs(_rigidbody2D.velocity.x));
+        // _animator.SetFloat("speed",Mathf.Abs(_rigidbody2D.velocity.x));
         // _animator.SetFloat("velocityY",_rigidbody2D.velocity.y);
         //_animator.SetBool("jump2",_controller.jumpTwice);
         // _animator.SetBool("jump",_controller.isJump);
