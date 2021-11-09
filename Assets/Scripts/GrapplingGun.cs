@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -56,19 +57,32 @@ public class GrapplingGun : MonoBehaviour
     [HideInInspector] public Vector2 grapplePoint;
     [HideInInspector] public Vector2 grappleDistanceVector;
 
+    private void OnEnable()
+    {
+        controls.Player.Enable();
+    }
+
+    private void OnDisable()
+    {
+        controls.Player.Disable();
+    }
+
+    private void Awake()
+    {
+        controls = new InputMaster();
+        controls.Player.Hook.performed += ctx => this.SetGrapplePoint();
+    }
+
     private void Start()
     {
         grappleRope.enabled = false;
         m_springJoint2D.enabled = false;
-        controls = new InputMaster();
-        controls.Player.Enable();
-
     }
 
     private void Update()
     {
 
-        controls.Player.Hook.performed += ctx => Grapple();
+        // controls.Player.Hook.performed += ctx => Grapple();
         if (Input.GetKey(KeyCode.Mouse0))
         {
             SetGrapplePoint();
