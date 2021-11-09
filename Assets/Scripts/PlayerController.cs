@@ -59,6 +59,7 @@ public class PlayerController : MonoBehaviour
     //bool jump;
     //bool boost;
     public int boost;
+    public bool isClickedBoost;
 
     public float boostForce;
     private float moveInput;
@@ -74,9 +75,9 @@ public class PlayerController : MonoBehaviour
     private MessageTest _messageTest;
     public Rigidbody2D rb;
     private Animator _animator;
+    [Header("Boundary Animator")]
+    // public Animator boundaryAnimator;
     public float horizontalInput;
-
-    private int animationCount;
 
     #endregion
     private void OnEnable()
@@ -108,20 +109,20 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+        isClickedBoost = false;
         _messageTest = FindObjectOfType<MessageTest>();
         // Bag.SetActive(false);
         bc2D = GetComponent<CapsuleCollider2D>();
         rb = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
         colliderSize = bc2D.size;
+        // boundaryAnimator = GetComponent<Animator>();
+
     }
 
     void Update()
     {
-        if (Time.time >= lastDashTime)
-        {
-            CanDash();
-        }
+        Debug.Log(boost);
     }
 
     private void FixedUpdate()
@@ -304,6 +305,7 @@ public class PlayerController : MonoBehaviour
         
         if (boost > 0)
         {
+            isClickedBoost = true;
             Vector2 v2Velocity01 = rb.velocity;
             if (move.x < 0) //move.x is positive when moving right, move.x is negative when moving left
             {
@@ -316,6 +318,11 @@ public class PlayerController : MonoBehaviour
             }
             boost--;
         }
+
+        // if (boost == 0)
+        // {
+        //     // isClickedBoost = false;
+        // }
         // if (dashTimeLeft <= 0f)
         // {
         //     boost--;
