@@ -22,8 +22,10 @@ public class PlayerController : MonoBehaviour
     [Header("Ground Check")] public Transform groundCheck;
     public LayerMask groundLayer, slopeLayer;
     public float checkRadius;
-    [Header("FX Check")] public GameObject jumpFX;
+    [Header("FX Check")] 
+    public GameObject jumpFX;
     public GameObject fallFX;
+    public GameObject dashFX;
     public GameObject leftRunFX;
 
     [Header("Slope Function")] public float slopeCheckDistance;
@@ -119,12 +121,7 @@ public class PlayerController : MonoBehaviour
         // boundaryAnimator = GetComponent<Animator>();
 
     }
-
-    void Update()
-    {
-        Debug.Log(boost);
-    }
-
+    
     private void FixedUpdate()
     {
         rb.AddForce(new Vector2(move.x * speed * Time.fixedDeltaTime, 0), ForceMode2D.Impulse);
@@ -159,7 +156,7 @@ public class PlayerController : MonoBehaviour
             // transform.localScale = new Vector3(move.x, 1, 1);
             // transform.rotation
         }
-        else if (move.x < 0 && isJump)
+        else if (move.x > 0 && isJump)
         {
             // transform.localScale = new Vector3(move.x, 1, 1);
             leftRunFX.SetActive(false);
@@ -305,6 +302,8 @@ public class PlayerController : MonoBehaviour
         
         if (boost > 0)
         {
+            dashFX.SetActive(true);
+            dashFX.transform.position = transform.position + new Vector3(-3f, 0, 0);
             isClickedBoost = true;
             Vector2 v2Velocity01 = rb.velocity;
             if (move.x < 0) //move.x is positive when moving right, move.x is negative when moving left
@@ -318,16 +317,17 @@ public class PlayerController : MonoBehaviour
             }
             boost--;
         }
-
+        //
         // if (boost == 0)
         // {
+        //     dashFX.SetActive(false);
         //     // isClickedBoost = false;
         // }
         // if (dashTimeLeft <= 0f)
         // {
         //     boost--;
         // }
-        
+
         // if (boost > 0)
         // {
         //     Vector2 v2Velocity01 = rb.velocity;
@@ -372,7 +372,7 @@ public class PlayerController : MonoBehaviour
         //
         // }
 
-        
+
     }
 
     private void CanDash()
@@ -382,6 +382,7 @@ public class PlayerController : MonoBehaviour
         lastDashTime = Time.time;
     }
 
+    
     void OnCollisionEnter2D(Collision2D collider)
     {
         if (collider.gameObject.tag == "Ground" || collider.gameObject.tag == "Slope" ||
