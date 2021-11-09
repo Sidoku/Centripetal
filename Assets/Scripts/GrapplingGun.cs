@@ -70,7 +70,7 @@ public class GrapplingGun : MonoBehaviour
     private void Awake()
     {
         controls = new InputMaster();
-        controls.Player.Hook.performed += ctx => this.SetGrapplePoint();
+   
     }
 
     private void Start()
@@ -82,12 +82,16 @@ public class GrapplingGun : MonoBehaviour
     private void Update()
     {
 
-        // controls.Player.Hook.performed += ctx => Grapple();
-        if (Input.GetKey(KeyCode.Mouse0))
+        //Check for isGrappled to be activated when player pulls the trigger for grappling
+
+        controls.Player.Hook.performed += ctx => isGrappled = true;
+        controls.Player.Hook.canceled += ctx => isGrappled = false;
+
+        if (Input.GetKey(KeyCode.Mouse0) || isGrappled == true)
         {
             SetGrapplePoint();
         }
-        else if (Input.GetKey(KeyCode.Mouse0))
+        else if (Input.GetKey(KeyCode.Mouse0) || isGrappled == true)
         {
             if (grappleRope.enabled)
             {
@@ -109,7 +113,7 @@ public class GrapplingGun : MonoBehaviour
                 }
             }
         }
-        else if (Input.GetKeyUp(KeyCode.Mouse0))
+        else if (Input.GetKeyUp(KeyCode.Mouse0) || isGrappled == false)
         {
             grappleRope.enabled = false;
             m_springJoint2D.enabled = false;
@@ -177,7 +181,7 @@ public class GrapplingGun : MonoBehaviour
                     return;
                 }
                 grappleRope.enabled = true;
-                isGrappled = true;
+              //  isGrappled = true;
             }
         }
         // Vector2 distanceVector = m_camera.ScreenToWorldPoint(Input.mousePosition) - gunPivot.position;
