@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
     public static PlayerController Instance;
 
     public float speed, jumpForce;
-    public int playerGravityScale;
+    //public int playerGravityScale;
     // [Header("Player State")] 
     // public float health;
     // public bool isDead;
@@ -189,7 +189,7 @@ public class PlayerController : MonoBehaviour
             Vector2 v2Velocity = rb.velocity;
             rb.velocity = new Vector2(move.x, 0); // stops player from falling down, allowing for a verticle jump when falling
             rb.velocity = new Vector2(move.x + v2Velocity.x, jumpForce * 100 * Time.fixedDeltaTime);
-            rb.gravityScale = playerGravityScale;
+            //rb.gravityScale = playerGravityScale;
             jumps--;
         }
     }
