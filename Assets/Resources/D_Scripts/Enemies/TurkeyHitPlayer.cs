@@ -21,7 +21,7 @@ public class TurkeyHitPlayer : MonoBehaviour
     {
         if (other.collider.CompareTag("Player"))
         {
-            PlayerController.Instance.isDead = true;
+            // PlayerController.Instance.isDead = true;
         }
     }
 }

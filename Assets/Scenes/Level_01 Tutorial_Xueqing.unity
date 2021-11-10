@@ -114868,12 +114868,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grappleRope: {fileID: 428185560}
+  isGrappled: 0
   grappleToAll: 0
   grappableLayerNumber: 4
   m_camera: {fileID: 836683635}
   gunHolder: {fileID: 1642605706}
   gunPivot: {fileID: 396166240}
   firePoint: {fileID: 730087814}
+  DestinationPoint: {x: 0, y: 0}
   m_springJoint2D: {fileID: 1642605701}
   m_rigidbody: {fileID: 1642605704}
   rotateOverTime: 0

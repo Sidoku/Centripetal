@@ -78,7 +78,7 @@ public class Mechanics : MonoBehaviour
         playerPoint = transform.position;
         direction = transform.localScale.x;
 
-        if (!PlayerController.Instance.hasYoyo)
+        // if (!PlayerController.Instance.hasYoyo)
             return;
 
         #region mechanic_1
@@ -162,7 +162,7 @@ public class Mechanics : MonoBehaviour
 
         #region dynamic_1
 
-        if (PlayerController.Instance.canJump2 && !PlayerController.Instance.isGround)
+        // if (PlayerController.Instance.canJump2 && !PlayerController.Instance.isGround)
         {
             if (Input.GetKeyDown(KeyCode.Space) && !isUseSkills)
                 // if (Input.GetMouseButtonDown(2) && !isUseSkills)
@@ -382,7 +382,7 @@ public class Mechanics : MonoBehaviour
         yoyoMaxDistance = false;
         isJumped = false;
         // PlayerController.Instance.rb.bodyType = RigidbodyType2D.Dynamic;
-        PlayerController.Instance.canJump2 = false;
+        // PlayerController.Instance.canJump2 = false;
         Destroy(tempYoyo);
     }
 

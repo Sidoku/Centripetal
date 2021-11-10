@@ -54,7 +54,7 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        gameOver = PlayerController.Instance.isDead;
+        // gameOver = PlayerController.Instance.isDead;
     }
     
     

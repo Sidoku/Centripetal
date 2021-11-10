@@ -21,7 +21,7 @@ public class RoomDoor : MonoBehaviour
     {
         if (other.transform.CompareTag("Player"))
         {
-            if (!PlayerController.Instance.hasBag)
+            // if (!PlayerController.Instance.hasBag)
                 return;
             // gameObject.layer = LayerMask.NameToLayer("CollectionTrigger");
             gameObject.GetComponent<BoxCollider2D>().enabled = false;

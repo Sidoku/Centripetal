@@ -12,6 +12,7 @@ TagManager:
   - Wall
   - Breakfast
   - Yoyo
+  - GrapplePoint
   layers:
   - Default
   - TransparentFX
@@ -27,7 +28,7 @@ TagManager:
   - Collection
   - Player
   - Ground
-  - 
+  - Objects
   - 
   - 
   - 

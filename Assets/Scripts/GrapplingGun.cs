@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,6 +12,7 @@ public class GrapplingGun : MonoBehaviour
     [Header("Scripts Ref:")]
     public GrapplingRope grappleRope;
 
+    public bool isGrappled; //check if player really grapple the point, if is grappled, activate the grapple point animation
     [Header("Layers Settings:")]
     [SerializeField] private bool grappleToAll = false;
     [SerializeField] private int grappableLayerNumber = 9;
@@ -22,6 +24,7 @@ public class GrapplingGun : MonoBehaviour
     public Transform gunHolder;
     public Transform gunPivot;
     public Transform firePoint;
+    public Vector2 DestinationPoint;
 
     [Header("Physics Ref:")]
     public SpringJoint2D m_springJoint2D;
@@ -54,24 +57,41 @@ public class GrapplingGun : MonoBehaviour
     [HideInInspector] public Vector2 grapplePoint;
     [HideInInspector] public Vector2 grappleDistanceVector;
 
+    private void OnEnable()
+    {
+        controls.Player.Enable();
+    }
+
+    private void OnDisable()
+    {
+        controls.Player.Disable();
+    }
+
+    private void Awake()
+    {
+        controls = new InputMaster();
+   
+    }
+
     private void Start()
     {
         grappleRope.enabled = false;
         m_springJoint2D.enabled = false;
-        controls = new InputMaster();
-        controls.Player.Enable();
-
     }
 
     private void Update()
     {
 
-        controls.Player.Hook.performed += ctx => Grapple();
-        if (Input.GetKey(KeyCode.Mouse0))
+        //Check for isGrappled to be activated when player pulls the trigger for grappling
+
+        controls.Player.Hook.performed += ctx => isGrappled = true;
+        controls.Player.Hook.canceled += ctx => isGrappled = false;
+
+        if (Input.GetKey(KeyCode.Mouse0) || isGrappled == true)
         {
             SetGrapplePoint();
         }
-        else if (Input.GetKey(KeyCode.Mouse0))
+        else if (Input.GetKey(KeyCode.Mouse0) || isGrappled == true)
         {
             if (grappleRope.enabled)
             {
@@ -93,11 +113,11 @@ public class GrapplingGun : MonoBehaviour
                 }
             }
         }
-        else if (Input.GetKeyUp(KeyCode.Mouse0))
+        else if (Input.GetKeyUp(KeyCode.Mouse0) || isGrappled == false)
         {
             grappleRope.enabled = false;
             m_springJoint2D.enabled = false;
-            m_rigidbody.gravityScale = 1;
+            // m_rigidbody.gravityScale = 1;
         }
         else
         {
@@ -121,23 +141,73 @@ public class GrapplingGun : MonoBehaviour
         }
     }
 
+    // void SetGrapplePoint()
+    // {
+    //     Vector2 distanceVector = m_camera.ScreenToWorldPoint(Input.mousePosition) - gunPivot.position;
+    //     if (Physics2D.Raycast(firePoint.position, distanceVector.normalized))
+    //     {
+    //         RaycastHit2D _hit = Physics2D.Raycast(firePoint.position, distanceVector.normalized);
+    //         if (_hit.transform.gameObject.layer == grappableLayerNumber || grappleToAll)
+    //         {
+    //             
+    //             if (Vector2.Distance(_hit.point, firePoint.position) <= maxDistnace || !hasMaxDistance)
+    //             {
+    //                 // grapplePoint = _hit.point;
+    //                 grapplePoint = DestinationPoint;
+    //                 Debug.Log(grapplePoint);
+    //                 grappleDistanceVector = grapplePoint - (Vector2)gunPivot.position;
+    //                 if (grapplePoint.x == 0f || grapplePoint.y == 0f)
+    //                 {
+    //                     return;
+    //                 }
+    //                 grappleRope.enabled = true;
+    //             }
+    //         }
+    //     }
+    // }
+    
     void SetGrapplePoint()
     {
-        Vector2 distanceVector = m_camera.ScreenToWorldPoint(Input.mousePosition) - gunPivot.position;
-        if (Physics2D.Raycast(firePoint.position, distanceVector.normalized))
+        foreach (var points in GameController.Instance.grapplePoints)
         {
-            RaycastHit2D _hit = Physics2D.Raycast(firePoint.position, distanceVector.normalized);
-            if (_hit.transform.gameObject.layer == grappableLayerNumber || grappleToAll)
+            if (Vector2.Distance(transform.position,points.position) < 10f)
             {
-                if (Vector2.Distance(_hit.point, firePoint.position) <= maxDistnace || !hasMaxDistance)
+                // points.gameObject.GetComponent<Animator>().SetTrigger("isGrappled");
+                grapplePoint = points.position;
+                //             Debug.Log(grapplePoint);
+                grappleDistanceVector = grapplePoint - (Vector2)gunPivot.position;
+                if (grapplePoint.x == 0f || grapplePoint.y == 0f)
                 {
-                    grapplePoint = _hit.point;
-                    grappleDistanceVector = grapplePoint - (Vector2)gunPivot.position;
-                    grappleRope.enabled = true;
+                    return;
                 }
+                grappleRope.enabled = true;
+              //  isGrappled = true;
             }
         }
+        // Vector2 distanceVector = m_camera.ScreenToWorldPoint(Input.mousePosition) - gunPivot.position;
+        // if (Physics2D.Raycast(firePoint.position, distanceVector.normalized))
+        // {
+        //     RaycastHit2D _hit = Physics2D.Raycast(firePoint.position, distanceVector.normalized);
+        //     if (_hit.transform.gameObject.layer == grappableLayerNumber || grappleToAll)
+        //     {
+        //         
+        //         if (Vector2.Distance(_hit.point, firePoint.position) <= maxDistnace || !hasMaxDistance)
+        //         {
+        //             // grapplePoint = _hit.point;
+        //             grapplePoint = DestinationPoint;
+        //             Debug.Log(grapplePoint);
+        //             grappleDistanceVector = grapplePoint - (Vector2)gunPivot.position;
+        //             if (grapplePoint.x == 0f || grapplePoint.y == 0f)
+        //             {
+        //                 return;
+        //             }
+        //             grappleRope.enabled = true;
+        //         }
+        //     }
+        // }
     }
+    
+    
 
     public void Grapple()
     {
