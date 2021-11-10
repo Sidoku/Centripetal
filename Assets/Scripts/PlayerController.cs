@@ -209,14 +209,14 @@ public class PlayerController : MonoBehaviour
         // isPlatform = Physics2D.OverlapCircle(position1, 0.02f, platformLayer);
         if (isGround)
         {
-            rb.gravityScale = 1;
+            // rb.gravityScale = 1;
             isJump = false;
             // jumpTwice = false;
         }
-        else if (!isJump && !isGround) //上平台之后修复重力变成1
-        {
-            rb.gravityScale = playerGravityScale;
-        }
+        // else if (!isJump && !isGround) //上平台之后修复重力变成1
+        // {
+        //     rb.gravityScale = playerGravityScale;
+        // }
 
         if (rb.velocity.y <= 0.0f)
         {
