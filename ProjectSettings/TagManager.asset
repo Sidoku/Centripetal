@@ -13,6 +13,7 @@ TagManager:
   - Breakfast
   - Yoyo
   - GrapplePoint
+  - Bus
   layers:
   - Default
   - TransparentFX
