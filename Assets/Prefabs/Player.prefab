@@ -271,7 +271,15 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 554937252555706778}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+<<<<<<< HEAD
+<<<<<<< HEAD
   m_LocalPosition: {x: -0.13, y: 0, z: 0}
+=======
+  m_LocalPosition: {x: -0.647, y: 0, z: 0}
+>>>>>>> Matt
+=======
+  m_LocalPosition: {x: -0.647, y: 0, z: 0}
+>>>>>>> Matt
   m_LocalScale: {x: 0.6301, y: 0.4309, z: 1}
   m_Children:
   - {fileID: 554937252626676927}
@@ -696,7 +704,15 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
+<<<<<<< HEAD
+<<<<<<< HEAD
   m_GravityScale: 1
+=======
+  m_GravityScale: 2
+>>>>>>> Matt
+=======
+  m_GravityScale: 2
+>>>>>>> Matt
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -717,9 +733,21 @@ SpringJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 0
   m_Anchor: {x: 0, y: 0}
+<<<<<<< HEAD
+<<<<<<< HEAD
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
   m_Distance: 48.84363
+=======
+  m_ConnectedAnchor: {x: 281.16, y: -34.45}
+  m_AutoConfigureDistance: 1
+  m_Distance: 283.2627
+>>>>>>> Matt
+=======
+  m_ConnectedAnchor: {x: 281.16, y: -34.45}
+  m_AutoConfigureDistance: 1
+  m_Distance: 283.2627
+>>>>>>> Matt
   m_DampingRatio: 1
   m_Frequency: 1
 --- !u!114 &554937252767020094
@@ -764,9 +792,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ce1fead6bc9c4947ab78886c8d5c92c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
+<<<<<<< HEAD
   speed: 5
   jumpForce: 10
   playerGravityScale: 2
+=======
+  speed: 7
+  jumpForce: 8
+>>>>>>> Matt
+=======
+  speed: 7
+  jumpForce: 8
+>>>>>>> Matt
   isGround: 0
   isJump: 0
   canJump: 0
@@ -794,7 +832,15 @@ MonoBehaviour:
   move: {x: 0, y: 0}
   boost: 0
   isClickedBoost: 0
+<<<<<<< HEAD
+<<<<<<< HEAD
   boostForce: 7
+=======
+  boostForce: 9
+>>>>>>> Matt
+=======
+  boostForce: 9
+>>>>>>> Matt
   jumps: 0
   maxJumps: 2
   maxBoost: 1
@@ -1100,7 +1146,15 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 554937253218301240}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+<<<<<<< HEAD
+<<<<<<< HEAD
   m_LocalPosition: {x: 0, y: 0, z: -10}
+=======
+  m_LocalPosition: {x: 0, y: 0, z: -12}
+>>>>>>> Matt
+=======
+  m_LocalPosition: {x: 0, y: 0, z: -12}
+>>>>>>> Matt
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 554937252767020091}
@@ -1133,7 +1187,15 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
+<<<<<<< HEAD
+<<<<<<< HEAD
   orthographic size: 17.41
+=======
+  orthographic size: 19
+>>>>>>> Matt
+=======
+  orthographic size: 19
+>>>>>>> Matt
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
