@@ -128,11 +128,6 @@ public class PlayerController : MonoBehaviour
         PhysicsCheck();
         Movement();
         SlopeCheck();
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> Matt
     }
     
     private void Movement()
@@ -175,60 +170,8 @@ public class PlayerController : MonoBehaviour
             // // newVelocity.Set(-move.x * speed * slopeNormalPerpendicular.x * Time.fixedDeltaTime, -move.x * speed * slopeNormalPerpendicular.y * Time.fixedDeltaTime);
             // rb.velocity = newVelocity;
         }
-<<<<<<< HEAD
->>>>>>> Matt
-=======
->>>>>>> Matt
-    }
-    
-    private void Movement()
-    {
-        if (move.x == 0)
-        {
-            leftRunFX.SetActive(false);
-        }
-
-<<<<<<< HEAD
-        if (move.x != 0 && isGround)
-        {
-            leftRunFX.SetActive(true);
-            if (move.x > 0)
-            {
-                move.x = 1;
-                transform.localScale = new Vector3(Mathf.Abs(move.x * transform.localScale.x), transform.localScale.y, transform.localScale.z);
-                // transform.localScale = new Vector3(move.x,1,1);
-            }
-            else if (move.x < 0)
-            {
-                move.x = -1;
-                // transform.eulerAngles = new Vector3(0, 180, 0);
-                transform.localScale = new Vector3(Mathf.Abs(move.x * transform.localScale.x) * -1,
-                    transform.localScale.y, transform.localScale.z);
-            }
-            
-            // transform.localScale = new Vector3(move.x, 1, 1);
-            // transform.rotation
-        }
-        else if (move.x > 0 && isJump)
-        {
-            // transform.localScale = new Vector3(move.x, 1, 1);
-            leftRunFX.SetActive(false);
-        }
-
-<<<<<<< HEAD
-        if (isOnSlope && !canJump)
-        {
-            rb.AddForce(new Vector2(-move.x * speed * slopeNormalPerpendicular.x * Time.fixedDeltaTime, -move.x * speed * slopeNormalPerpendicular.y * Time.fixedDeltaTime), ForceMode2D.Impulse);
-            // newVelocity.Set(-move.x * speed * slopeNormalPerpendicular.x, -move.x * speed * slopeNormalPerpendicular.y);
-            // // newVelocity.Set(-move.x * speed * slopeNormalPerpendicular.x * Time.fixedDeltaTime, -move.x * speed * slopeNormalPerpendicular.y * Time.fixedDeltaTime);
-            // rb.velocity = newVelocity;
-        }
     }
 
-=======
->>>>>>> Matt
-=======
->>>>>>> Matt
     void Jump()
     {
         if (jumps == 0)
@@ -255,148 +198,6 @@ public class PlayerController : MonoBehaviour
     {
         fallFX.SetActive(true);
         fallFX.transform.position = transform.position + new Vector3(0, -0.75f, 0);
-<<<<<<< HEAD
-<<<<<<< HEAD
-    }
-
-    private void PhysicsCheck()
-    {
-        var position = groundCheck.position;
-        // var position1 = platformCheck.transform.position;
-        isGround = Physics2D.OverlapCircle(position, checkRadius, groundLayer)
-                   || Physics2D.OverlapCircle(position, checkRadius, slopeLayer);
-        // isPlatform = Physics2D.OverlapCircle(position1, 0.02f, platformLayer);
-        if (isGround)
-        {
-            // rb.gravityScale = 1;
-            isJump = false;
-            // jumpTwice = false;
-        }
-        // else if (!isJump && !isGround) //上平台之后修复重力变成1
-        // {
-        //     rb.gravityScale = playerGravityScale;
-        // }
-
-        if (rb.velocity.y <= 0.0f)
-        {
-            canJump = false;
-        }
-
-        // else if (isOnSlope && !isGround)
-        // {
-        //     rb.gravityScale = 100;
-        // }
-        // if (hit.collider.CompareTag("Wall"))
-        // {
-        //     Debug.DrawRay(transform.position,grabDir);
-        // }
-=======
->>>>>>> Matt
-    }
-    
-
-<<<<<<< HEAD
-    #region Slope Logic
-
-    private void SlopeCheck()
-    {
-=======
-    private void PhysicsCheck()
-    {
-        var position = groundCheck.position;
-        // var position1 = platformCheck.transform.position;
-        isGround = Physics2D.OverlapCircle(position, checkRadius, groundLayer)
-                   || Physics2D.OverlapCircle(position, checkRadius, slopeLayer);
-        // isPlatform = Physics2D.OverlapCircle(position1, 0.02f, platformLayer);
-        if (isGround)
-        {
-            //rb.gravityScale = 1;
-            isJump = false;
-            // jumpTwice = false;
-        }
-       /* else if (!isJump && !isGround) //上平台之后修复重力变成1
-        {
-            rb.gravityScale = playerGravityScale;
-        }*/
-
-        if (rb.velocity.y <= 0.0f)
-        {
-            canJump = false;
-        }
-
-        // else if (isOnSlope && !isGround)
-        // {
-        //     rb.gravityScale = 100;
-        // }
-        // if (hit.collider.CompareTag("Wall"))
-        // {
-        //     Debug.DrawRay(transform.position,grabDir);
-        // }
-    }
-    
-
-    #region Slope Logic
-
-    private void SlopeCheck()
-    {
->>>>>>> Matt
-        Vector2 checkPos = transform.position - new Vector3(0, colliderSize.y / 2);
-        SlopeCheckVertical(checkPos);
-        SlopeCheckHorizontal(checkPos);
-    }
-
-    private void SlopeCheckHorizontal(Vector2 checkPos)
-    {
-        RaycastHit2D slopeHitFront = Physics2D.Raycast(checkPos, transform.right, slopeCheckDistance, slopeLayer);
-        RaycastHit2D slopeHitBack = Physics2D.Raycast(checkPos, -transform.right, slopeCheckDistance, slopeLayer);
-        if (slopeHitFront)
-        {
-            isOnSlope = true;
-            slopeSideAngle = Vector2.Angle(slopeHitFront.normal, Vector2.up);
-        }
-        else if (slopeHitBack)
-        {
-            isOnSlope = true;
-            slopeSideAngle = Vector2.Angle(slopeHitBack.normal, Vector2.up);
-        }
-        else
-        {
-            slopeSideAngle = 0f;
-            isOnSlope = false;
-        }
-    }
-
-    private void SlopeCheckVertical(Vector2 checkPos)
-    {
-        RaycastHit2D hit = Physics2D.Raycast(checkPos, Vector2.down, slopeCheckDistance, slopeLayer);
-        if (hit)
-        {
-            slopeNormalPerpendicular = Vector2.Perpendicular(hit.normal).normalized;
-
-            slopeDownAngle = Vector2.Angle(hit.normal, Vector2.up); //angle between x-axis and the slope y-axis
-
-            if (slopeDownAngle != slopeDownAngleOld)
-            {
-                isOnSlope = true;
-            }
-
-            slopeDownAngleOld = slopeDownAngle;
-
-            Debug.DrawRay(hit.point, slopeNormalPerpendicular, Color.red);
-            Debug.DrawRay(hit.point, hit.normal, Color.blue);
-        }
-
-        if (isOnSlope && move.x == 0f)
-        {
-            rb.sharedMaterial = fullFriction;
-        }
-        else
-        {
-            rb.sharedMaterial = noFriction;
-        }
-    }
-
-=======
     }
 
     private void PhysicsCheck()
@@ -493,7 +294,6 @@ public class PlayerController : MonoBehaviour
         }
     }
 
->>>>>>> Matt
     #endregion
 
     #region Sid's logic

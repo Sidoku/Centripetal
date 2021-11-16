@@ -11,6 +11,7 @@ EditorBuildSettings:
   - enabled: 1
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     path: Assets/Scenes/Level Bus.unity
     guid: f64e745e3d72d40f6b5c6d69a0428d20
   - enabled: 0
@@ -18,11 +19,16 @@ EditorBuildSettings:
 =======
 =======
 >>>>>>> Matt
+=======
+>>>>>>> Matt
     path: Assets/Scenes/Level_01_HouseStreet.unity
     guid: f64e745e3d72d40f6b5c6d69a0428d20
   - enabled: 0
     path: Assets/Scenes/Old_Level_01 Tutorial.unity
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> Matt
+=======
 >>>>>>> Matt
 =======
 >>>>>>> Matt
