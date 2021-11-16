@@ -6,53 +6,34 @@ EditorUserSettings:
   serializedVersion: 4
   m_ConfigSettings:
     RecentlyUsedScenePath-0:
-      value: 22424703114646680e0b0227036c701c1228342f3a2d2a0f7d785326ece92021
-      flags: 0
-    RecentlyUsedScenePath-1:
       value: 22424703114646680e0b0227036c701c1228342f3a2d2a0f7d7b5d00f6f2313df6a767a7f234362820
       flags: 0
-    RecentlyUsedScenePath-2:
+    RecentlyUsedScenePath-1:
       value: 22424703114646680e0b0227036c701c1228342f3a2d2a0f7d7b5326ece92021
       flags: 0
-    RecentlyUsedScenePath-3:
+    RecentlyUsedScenePath-2:
       value: 22424703114646680e0b0227036c701c1228342f3a2d2a0f7d785d07f7f43b2aebe63aa7f234362820
       flags: 0
-    RecentlyUsedScenePath-4:
+    RecentlyUsedScenePath-3:
       value: 22424703114646680e0b0227036c701c1228342f3a2d2a0f7d785d07f7f43b2aebe63ad6df2f3a2d300ce8721130082beb
       flags: 0
-    RecentlyUsedScenePath-5:
+    RecentlyUsedScenePath-4:
       value: 22424703114646680e0b0227036c7315001214157c791918223c0e36d1f4263de7f378fce9332b25
       flags: 0
-    RecentlyUsedScenePath-6:
+    RecentlyUsedScenePath-5:
       value: 22424703114646680e0b0227036c701c1228342f3a2d2a0f7d7b5d62acf53a31f6fe
+      flags: 0
+    RecentlyUsedScenePath-6:
+      value: 22424703114646680e0b0227036c7315001214157c796618223c0e36a2e13a3ca2d422fbe23f2b722c0ce6281d
       flags: 0
     RecentlyUsedScenePath-7:
       value: 22424703114646680e0b0227036c73150012146a0e3d357e38271427fb
       flags: 0
     RecentlyUsedScenePath-8:
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
       value: 22424703114646680e0b0227036c7e0305120c6a1f2b233e2867083debf42d
       flags: 0
     RecentlyUsedScenePath-9:
-      value: 22424703114646680e0b0227036c7315001214157c796618223c0e36a2e13a3ca2d422fbe23f2b722c0ce6281d
-=======
-=======
->>>>>>> Matt
-=======
->>>>>>> Matt
-      value: 22424703114646680e0b0227036c7315001214157c796618223c0e36a2e13a3ca2d422fbe23f2b722c0ce6281d
-      flags: 0
-    RecentlyUsedScenePath-9:
-      value: 22424703114646680e0b0227036c7e0305120c6a1f2b233e2867083debf42d
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> Matt
-=======
->>>>>>> Matt
-=======
->>>>>>> Matt
+      value: 22424703114646680e0b0227036c7315001214157c7a6603283e1821acf53a31f6fe
       flags: 0
     vcSharedLogLevel:
       value: 0d5e400f0650
