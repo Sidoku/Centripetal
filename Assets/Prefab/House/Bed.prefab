@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2607363130298496536}
   - component: {fileID: 2607363130298496539}
+  - component: {fileID: 513963963812319641}
   m_Layer: 14
   m_Name: Bed
   m_TagString: Untagged
@@ -26,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 2607363130298496538}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -4.03, y: 0.05, z: 0}
-  m_LocalScale: {x: 2.9411, y: 2.9411, z: 2.9411}
+  m_LocalScale: {x: 4.6757607, y: 4.6757607, z: 4.6757607}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -68,9 +69,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: -1726725277
+  m_SortingLayer: 1
+  m_SortingOrder: 1
   m_Sprite: {fileID: 8283804097549351535, guid: 4a0ef57892a5b4ec4a20461f3067fb9c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -82,3 +83,40 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!60 &513963963812319641
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2607363130298496538}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.875, y: 1.6875}
+    newSize: {x: 2.875, y: 1.6875}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -1.4375, y: 0.84375}
+      - {x: -1.4375, y: -0.84375}
+      - {x: 1.4375, y: -0.84375}
+      - {x: 1.4453958, y: -0.06752491}
+      - {x: 1.1412106, y: -0.07023228}
+      - {x: 1.1295944, y: 0.22512916}
+      - {x: 1.0431875, y: 0.34711528}
+      - {x: -0.36278087, y: 0.35397512}
+      - {x: -0.36651257, y: 0.5435913}
+      - {x: -0.5625209, y: 0.73208845}
+      - {x: -0.9076183, y: 0.7079148}
+      - {x: -1.0714985, y: 0.8558247}
