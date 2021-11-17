@@ -3,46 +3,24 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - Ground
-  - Ceiling
-  - SpeedZone
-  - Slope
-  - Box
-  - Wall
-  - Breakfast
-  - Yoyo
-  - GrapplePoint
-  - Bus
+  tags: []
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Slope
+  - 
   - Water
   - UI
-  - Yoyo
-  - Items
-  - GroundCheck
-  - Grapple
-  - CollectionTrigger
-  - Collection
-  - Player
-  - Ground
-  - Objects
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
   - 
-=======
-  - Ceiling
->>>>>>> Matt
-=======
-  - Ceiling
->>>>>>> Matt
-=======
-  - Ceiling
->>>>>>> Matt
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
   - 
   - 
   - 
@@ -62,7 +40,4 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: NPC
-    uniqueID: 2568242019
     locked: 0

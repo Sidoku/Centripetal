@@ -79,6 +79,8 @@
      <Compile Include="Assets\InputMaster.cs" />
      <Compile Include="Assets\2d-extras-master\Runtime\Brushes\TintTextureGenerator.cs" />
      <Compile Include="Assets\2d-extras-master\Runtime\Tiles\RuleOverrideTile\RuleOverrideTile.cs" />
+     <Compile Include="Assets\BusScriptLevel_01.cs" />
+     <Compile Include="Assets\DestroyBus.cs" />
      <Compile Include="Assets\Resources\AudioManager\AudioName.cs" />
      <Compile Include="Assets\Resources\Scripts\Manager\LoadData.cs" />
      <Compile Include="Assets\Resources\Scripts\Room Items\ItemColors.cs" />
@@ -134,8 +136,7 @@
      <Compile Include="Assets\Scripts\GrapplePointCheck.cs" />
      <Compile Include="Assets\Resources\D_Scripts\Enemies\FSM\D_EnemyState.cs" />
      <Compile Include="Assets\Resources\D_Scripts\PlayerHit\Fire.cs" />
-     <Compile Include="Assets\BusScriptLevel_01.cs" />
-     <Compile Include="Assets\DestroyBus.cs" />
+     <Compile Include="Assets\Scripts\BusController.cs" />
      <None Include="Assets\SimplePixelUI\fonts\Font2\license.txt" />
      <None Include="Assets\SimplePixelUI\fonts\Font1\license.txt" />
      <None Include="Assets\SimplePixelUI\fonts\Font1\readme.txt" />
