@@ -3,6 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
+<<<<<<< Updated upstream
   tags:
   - Ground
   - Ceiling
@@ -13,13 +14,17 @@ TagManager:
   - Breakfast
   - Yoyo
   - GrapplePoint
+=======
+  tags: []
+>>>>>>> Stashed changes
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Slope
+  - 
   - Water
   - UI
+<<<<<<< Updated upstream
   - Yoyo
   - Items
   - GroundCheck
@@ -30,6 +35,18 @@ TagManager:
   - Ground
   - Objects
   - Ceilling
+=======
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+>>>>>>> Stashed changes
   - 
   - 
   - 
@@ -49,7 +66,4 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: NPC
-    uniqueID: 2568242019
     locked: 0
