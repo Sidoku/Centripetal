@@ -3,20 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-<<<<<<< Updated upstream
-  tags:
-  - Ground
-  - Ceiling
-  - SpeedZone
-  - Slope
-  - Box
-  - Wall
-  - Breakfast
-  - Yoyo
-  - GrapplePoint
-=======
   tags: []
->>>>>>> Stashed changes
   layers:
   - Default
   - TransparentFX
@@ -24,18 +11,6 @@ TagManager:
   - 
   - Water
   - UI
-<<<<<<< Updated upstream
-  - Yoyo
-  - Items
-  - GroundCheck
-  - Grapple
-  - CollectionTrigger
-  - Collection
-  - Player
-  - Ground
-  - Objects
-  - Ceilling
-=======
   - 
   - 
   - 
@@ -46,7 +21,6 @@ TagManager:
   - 
   - 
   - 
->>>>>>> Stashed changes
   - 
   - 
   - 
