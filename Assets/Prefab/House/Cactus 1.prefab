@@ -10,9 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 2231037958099691369}
   - component: {fileID: 2231037958099691368}
+  - component: {fileID: 7045157423554717049}
   m_Layer: 14
   m_Name: Cactus 1
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 2231037958099691371}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 24.59, y: 2.12, z: 0}
-  m_LocalScale: {x: 2.9411, y: 2.9411, z: 2.9411}
+  m_LocalScale: {x: 2.2082407, y: 2.2082407, z: 2.2082407}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -82,3 +83,48 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!60 &7045157423554717049
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2231037958099691371}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.5625, y: 3.125}
+    newSize: {x: 1.5625, y: 3.125}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.4539994, y: 1.5881586}
+      - {x: -0.037461117, y: 1.5443546}
+      - {x: -0.12136085, y: 1.2206361}
+      - {x: -0.094940335, y: 0.56642574}
+      - {x: -0.5620207, y: 1.1182772}
+      - {x: -0.79031616, y: 0.98689544}
+      - {x: -0.79711527, y: 0.53511053}
+      - {x: -0.08967179, y: -0.19760416}
+      - {x: -0.083185434, y: -0.7278735}
+      - {x: -0.32606992, y: -0.7255451}
+      - {x: -0.3072072, y: -1.0089664}
+      - {x: -0.18518515, y: -1.1254953}
+      - {x: -0.13558432, y: -1.5625}
+      - {x: 0.6384651, y: -1.5625}
+      - {x: 0.6470339, y: -1.1851422}
+      - {x: 0.8290903, y: -1.0100409}
+      - {x: 0.83581156, y: -0.72810715}
+      - {x: 0.61063653, y: -0.7409432}
+      - {x: 0.6235265, y: 0.65514785}
+      - {x: 0.6225997, y: 1.1341425}

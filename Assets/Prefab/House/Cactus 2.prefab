@@ -10,9 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1447554090596025107}
   - component: {fileID: 1447554090596025106}
+  - component: {fileID: 52527211309839452}
   m_Layer: 14
   m_Name: Cactus 2
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -82,3 +83,36 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!60 &52527211309839452
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1447554090596025105}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.8125, y: 3.125}
+    newSize: {x: 1.8125, y: 3.125}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.46875, y: 1.5625}
+      - {x: -0.90625, y: 1.3125}
+      - {x: -0.90625, y: -0.1875}
+      - {x: -0.53125, y: -1.5625}
+      - {x: 0.71875, y: -1.5625}
+      - {x: 0.90625, y: -1}
+      - {x: 0.90625, y: 1.125}
+      - {x: 0.46875, y: 1.5625}

@@ -70,7 +70,7 @@ GameObject:
   - component: {fileID: 7899090354566018529}
   m_Layer: 14
   m_Name: Room Table
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
