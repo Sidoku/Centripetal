@@ -6,6 +6,8 @@ public class BusController : MonoBehaviour
 {
     public Transform startPoint;
     public Transform endPoint;
+    public int speed;
+    public int busSpawnDelay;
 
     public GameObject busPrefab;
 
@@ -26,7 +28,7 @@ public class BusController : MonoBehaviour
         {
             for (int i = 0; i < tempBus.Count; i++)
             {
-                tempBus[i].transform.position = Vector2.MoveTowards(tempBus[i].transform.position, endPoint.transform.position, 10 * Time.deltaTime);
+                tempBus[i].transform.position = Vector2.MoveTowards(tempBus[i].transform.position, endPoint.transform.position, speed * Time.deltaTime);
                 if (Vector2.Distance(tempBus[i].transform.position,endPoint.transform.position) < 0.5f)
                 {
                     var clone = tempBus[i];
@@ -51,7 +53,7 @@ public class BusController : MonoBehaviour
     {
         var bus = Instantiate(busPrefab, startPoint);
         tempBus.Add(bus);
-        yield return new WaitForSeconds(10f);
+        yield return new WaitForSeconds(busSpawnDelay);
         StartCoroutine(InstantiateBus());
     }
 }
