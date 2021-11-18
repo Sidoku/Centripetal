@@ -67,7 +67,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7397238840604796700}
   - component: {fileID: 7397238840604796701}
-  - component: {fileID: 7899090354566018529}
+  - component: {fileID: 1248105318143562329}
   m_Layer: 14
   m_Name: Room Table
   m_TagString: Ground
@@ -128,7 +128,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1726725277
-  m_SortingLayer: 1
+  m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 2079529122496411397, guid: 4a0ef57892a5b4ec4a20461f3067fb9c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -141,8 +141,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!60 &7899090354566018529
-PolygonCollider2D:
+--- !u!61 &1248105318143562329
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -164,13 +164,6 @@ PolygonCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: -1.5625, y: 0.96875}
-      - {x: -1.3313816, y: 0.67562455}
-      - {x: -1.3177867, y: -0.53672576}
-      - {x: -1.3096676, y: -0.97554773}
-      - {x: 1.3776432, y: -0.9823451}
-      - {x: 1.3721676, y: -0.3560235}
-      - {x: 1.3925606, y: 0.7911829}
-      - {x: 1.5625, y: 0.96875}
+  serializedVersion: 2
+  m_Size: {x: 3.125, y: 1.9375}
+  m_EdgeRadius: 0
