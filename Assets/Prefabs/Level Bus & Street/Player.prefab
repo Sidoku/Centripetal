@@ -765,7 +765,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 8
-  jumpForce: 10
+  jumpForce: 12
   isGround: 0
   isJump: 0
   canJump: 0
