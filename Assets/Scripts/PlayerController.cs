@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -38,19 +39,16 @@ public class PlayerController : MonoBehaviour
     private float slopeSideAngle;
     private Vector2 slopeNormalPerpendicular;
 
-    [SerializeField] private bool isOnSlope;
+    [SerializeField] 
+    private bool isOnSlope;
     private bool isJumping;
     private CapsuleCollider2D bc2D;
+    private Vector2 oldPosition;
 
     public PhysicsMaterial2D noFriction;
     public PhysicsMaterial2D fullFriction;
 
-    [Header("YOYO Dash")] 
-    public bool isDash;
-    public float dashTimeLeft;//冲锋剩余时间
-    public float lastDashTime;//上次Dash的时间点
-    public float dashTime;//冲锋时间
-    public int dashSpeedX;//充分速度
+    
 
     #region Sid's movement
 
@@ -128,6 +126,11 @@ public class PlayerController : MonoBehaviour
         PhysicsCheck();
         Movement();
         SlopeCheck();
+        
+        //calculate speed here
+        var currentSpeed = Vector2.Distance(oldPosition, transform.position) * 100f;
+        oldPosition = transform.position;
+        //if currentSpeed > 50, play rotate animation
     }
     
     private void Movement()
@@ -330,6 +333,20 @@ public class PlayerController : MonoBehaviour
         {
             jumps = maxJumps;
             boost = maxBoost;
+        }
+
+        if (collider.gameObject.tag =="Glass")
+        {
+            collider.gameObject.GetComponent<Animator>().SetTrigger("isPlayer");
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.transform.gameObject.tag =="Glass")
+        {
+            other.gameObject.GetComponent<Animator>().SetTrigger("isPlayer");
+            Debug.Log("1");
         }
     }
 

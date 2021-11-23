@@ -601,6 +601,7 @@ GameObject:
   - component: {fileID: 554937252767020094}
   - component: {fileID: 554937252767020084}
   - component: {fileID: 554937252767020092}
+  - component: {fileID: 3047320693474614040}
   m_Layer: 12
   m_Name: Player
   m_TagString: Player
@@ -721,7 +722,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 281.16, y: -34.45}
   m_AutoConfigureDistance: 1
-  m_Distance: 274.014
+  m_Distance: 241.95302
   m_DampingRatio: 1
   m_Frequency: 1
 --- !u!114 &554937252767020094
@@ -787,11 +788,6 @@ MonoBehaviour:
   isOnSlope: 0
   noFriction: {fileID: 6200000, guid: a196a80d3106247f2b333295040364df, type: 2}
   fullFriction: {fileID: 6200000, guid: 53ff4e6007b404ec8b0ae863fd27972c, type: 2}
-  isDash: 0
-  dashTimeLeft: 0
-  lastDashTime: 0
-  dashTime: 1
-  dashSpeedX: 12
   move: {x: 0, y: 0}
   boost: 0
   isClickedBoost: 0
@@ -817,6 +813,22 @@ CapsuleCollider2D:
   m_Offset: {x: 0.0031861132, y: -0.02973875}
   m_Size: {x: 0.80246013, y: 0.80246013}
   m_Direction: 0
+--- !u!58 &3047320693474614040
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 554937252767020995}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.0000019073486, y: 0.0000019073486}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!1 &554937252795615282
 GameObject:
   m_ObjectHideFlags: 0
@@ -1315,7 +1327,7 @@ GameObject:
   - component: {fileID: 6708330333609691589}
   - component: {fileID: 2850971470608483671}
   - component: {fileID: 7777844341848747343}
-  m_Layer: 12
+  m_Layer: 4
   m_Name: GrapplePointCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1555,8 +1567,8 @@ SpriteRenderer:
   m_SortingLayerID: -1726725277
   m_SortingLayer: 1
   m_SortingOrder: 5
-  m_Sprite: {fileID: 21300000, guid: 95a20d2dcfcc7494cb529b9a78dbfe5e, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.24705882}
+  m_Sprite: {fileID: 21300000, guid: 317c2620e1fbf4dd9918cddce2ea13eb, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.48235294}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

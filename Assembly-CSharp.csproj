@@ -139,6 +139,7 @@
      <Compile Include="Assets\Scripts\GrapplePointCheck.cs" />
      <Compile Include="Assets\Resources\D_Scripts\Enemies\FSM\D_EnemyState.cs" />
      <Compile Include="Assets\Resources\D_Scripts\PlayerHit\Fire.cs" />
+     <Compile Include="Assets\Scripts\DestroyGlass.cs" />
      <None Include="Assets\SimplePixelUI\fonts\Font2\license.txt" />
      <None Include="Assets\SimplePixelUI\fonts\Font1\license.txt" />
      <None Include="Assets\SimplePixelUI\fonts\Font1\readme.txt" />
