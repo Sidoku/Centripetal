@@ -23,7 +23,7 @@ public class BazierFollow : MonoBehaviour
     {
         routeToGo = 0;
         tParam = 0f;
-        speedModifier = 0.5f;
+        // speedModifier = 0.5f;
         coroutineAllowed = true;
     }
 

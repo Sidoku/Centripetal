@@ -184,7 +184,6 @@ public class GrapplingGun : MonoBehaviour
                     return;
                 }
                 grappleRope.enabled = true;
-              //  isGrappled = true;
             }
         }
         // Vector2 distanceVector = m_camera.ScreenToWorldPoint(Input.mousePosition) - gunPivot.position;
