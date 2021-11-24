@@ -3,12 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="be213ea1-6310-40c1-aaf8-1be9c159dff2" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.yo-yo_repo-Xequin_branch/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.yo-yo_repo-Xequin_branch/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assembly-CSharp-Editor.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp-Editor.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assembly-CSharp-firstpass.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp-firstpass.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assembly-CSharp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Level Sewer/Ripple Water.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Level Sewer/Ripple Water.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Level Sewer/Water Grop.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Level Sewer/Water Grop.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Animation/Sewer/BGWater/Idle.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animation/Sewer/BGWater/Idle.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Animation/Sewer/RippleWater.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animation/Sewer/RippleWater.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Animation/Sewer/Water Drop/Idle.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animation/Sewer/Water Drop/Idle.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Animation/Trampoline/Trampoline.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animation/Trampoline/Trampoline.controller" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level_02 Sewer 1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level_02 Sewer 1.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/Trampoline.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Standard Assets/Trampoline.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,6 +32,8 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Standard Assets/Trampoline.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/WaterGrop.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/RippleWater.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="21IkKJTonfHxyBA5BFLBj1Umgl5" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -75,7 +81,7 @@
       <updated>1637635946356</updated>
       <workItem from="1637635976524" duration="1676000" />
       <workItem from="1637637692489" duration="174000" />
-      <workItem from="1637786751151" duration="1905000" />
+      <workItem from="1637786751151" duration="6879000" />
     </task>
     <servers />
   </component>

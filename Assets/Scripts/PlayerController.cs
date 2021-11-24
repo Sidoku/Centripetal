@@ -48,6 +48,8 @@ public class PlayerController : MonoBehaviour
     public PhysicsMaterial2D noFriction;
     public PhysicsMaterial2D fullFriction;
 
+    private bool banMovement;
+
     
 
     #region Sid's movement
@@ -71,7 +73,7 @@ public class PlayerController : MonoBehaviour
     #endregion
 
     #region private members
-
+    
     private MessageTest _messageTest;
     public Rigidbody2D rb;
     private Animator _animator;
@@ -122,6 +124,10 @@ public class PlayerController : MonoBehaviour
     
     private void FixedUpdate()
     {
+        if (banMovement)
+        {
+            return;   
+        }
         rb.AddForce(new Vector2(move.x * speed * Time.fixedDeltaTime, 0), ForceMode2D.Impulse);
         PhysicsCheck();
         Movement();
@@ -356,6 +362,18 @@ public class PlayerController : MonoBehaviour
         {
             jumps = maxJumps;
             boost = maxBoost;
+        }
+        if (other.transform.name.StartsWith("Ripple"))
+        {
+            banMovement = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.transform.name.StartsWith("Ripple"))
+        {
+            banMovement = false;
         }
     }
 

@@ -71,6 +71,7 @@
      <Compile Include="Assets\Resources\Scripts\Manager\UIManager.cs" />
      <Compile Include="Assets\Resources\Scripts\Save\SaveData.cs" />
      <Compile Include="Assets\Resources\D_Scripts\PlayerHit\CheckLists.cs" />
+     <Compile Include="Assets\Scripts\RippleWater.cs" />
      <Compile Include="Assets\Scripts\BazierFollow.cs" />
      <Compile Include="Assets\Resources\D_Scripts\Enemies\TurkeyTriggerPoint.cs" />
      <Compile Include="Assets\Resources\D_Scripts\Enemies\Turkey.cs" />
@@ -101,6 +102,7 @@
      <Compile Include="Assets\Resources\D_Scripts\MessageSystem\MessageTest.cs" />
      <Compile Include="Assets\Resources\Scripts\Room Items\FirstFindYoyo.cs" />
      <Compile Include="Assets\Scripts\GameController.cs" />
+     <Compile Include="Assets\Scripts\WaterGrop.cs" />
      <Compile Include="Assets\Resources\D_Scripts\PlayerHit\PlayerHitEnemy.cs" />
      <Compile Include="Assets\Resources\D_Scripts\End\EndAndRestartGame.cs" />
      <Compile Include="Assets\Scripts\GrapplePoint.cs" />
