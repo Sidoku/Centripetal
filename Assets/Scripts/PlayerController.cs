@@ -343,10 +343,19 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        // switch (other.transform.name)
+        // {
+        //     
+        // }
         if (other.transform.gameObject.tag =="Glass")
         {
             other.gameObject.GetComponent<Animator>().SetTrigger("isPlayer");
             Debug.Log("1");
+        }
+        if (other.transform.gameObject.tag =="Ground")
+        {
+            jumps = maxJumps;
+            boost = maxBoost;
         }
     }
 

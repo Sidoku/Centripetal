@@ -722,7 +722,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 281.16, y: -34.45}
   m_AutoConfigureDistance: 1
-  m_Distance: 241.95302
+  m_Distance: 257.5592
   m_DampingRatio: 1
   m_Frequency: 1
 --- !u!114 &554937252767020094
@@ -820,7 +820,7 @@ CircleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 554937252767020995}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
