@@ -106,6 +106,7 @@
      <Compile Include="Assets\Scripts\DashFX.cs" />
      <Compile Include="Assets\Scripts\PedestrainLight.cs" />
      <Compile Include="Assets\Resources\D_Scripts\Enemies\BlueBird.cs" />
+     <Compile Include="Assets\destroyBall.cs" />
      <Compile Include="Assets\Resources\D_Scripts\MessageSystem\MessageCenter.cs" />
      <Compile Include="Assets\Resources\Scripts\Manager\GameManager.cs" />
      <Compile Include="Assets\Resources\Scripts\Street\WarnSignTrigger.cs" />
@@ -117,6 +118,7 @@
      <Compile Include="Assets\Resources\Scripts\Manager\StartMenu.cs" />
      <Compile Include="Assets\Resources\D_Scripts\Enemies\TurkeyHitPlayer.cs" />
      <Compile Include="Assets\Resources\D_Scripts\PlayerHit\Spike.cs" />
+     <Compile Include="Assets\Spawner.cs" />
      <Compile Include="Assets\Resources\Scripts\Yoyo\Mechanics.cs" />
      <Compile Include="Assets\Resources\Scripts\Room Items\RoomDoor.cs" />
      <Compile Include="Assets\Resources\D_Scripts\MessageSystem\MessageData.cs" />
