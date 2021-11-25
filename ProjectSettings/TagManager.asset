@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Ground
   - Ceiling
+  - Slope
+  - Ball
   layers:
   - Default
   - TransparentFX
@@ -13,10 +15,10 @@ TagManager:
   - 
   - Water
   - UI
+  - Bounce Grapple
+  - Ceiling
   - 
   - 
-  - 
-  - Grapple
   - 
   - 
   - 
