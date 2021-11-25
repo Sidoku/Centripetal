@@ -732,6 +732,26 @@
  </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="External.csproj">
+      <Project>{0d20a7a7-6cec-7ede-a14f-b0c7708eaf31}</Project>
+      <Name>External</Name>
+    </ProjectReference>
+    <ProjectReference Include="Animation.csproj">
+      <Project>{ebe0a2b9-7551-e930-5eb5-ae208ab3724e}</Project>
+      <Name>Animation</Name>
+    </ProjectReference>
+    <ProjectReference Include="Controller.csproj">
+      <Project>{d6523534-154b-54a3-3916-764900ca6afe}</Project>
+      <Name>Controller</Name>
+    </ProjectReference>
+    <ProjectReference Include="Grapple.csproj">
+      <Project>{6ef68255-8f0a-15bb-c902-e6f8d63fbd64}</Project>
+      <Name>Grapple</Name>
+    </ProjectReference>
+    <ProjectReference Include="Player.csproj">
+      <Project>{9082f134-05a8-1d81-e8ec-e06a580137c6}</Project>
+      <Name>Player</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

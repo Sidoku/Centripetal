@@ -779,7 +779,7 @@ MonoBehaviour:
   slopeLayer:
     serializedVersion: 2
     m_Bits: 8
-  checkRadius: 0.5
+  checkRadius: 0.2
   jumpFX: {fileID: 554937252741197883}
   fallFX: {fileID: 554937252245070873}
   dashFX: {fileID: 6891515398834500728}

@@ -52,101 +52,12 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Resources\Scripts\Yoyo\yoyo.cs" />
-     <Compile Include="Assets\Scripts\ShadowPool.cs" />
-     <Compile Include="Assets\2d-extras-master\Runtime\Tiles\RandomTile\RandomTile.cs" />
-     <Compile Include="Assets\2d-extras-master\Runtime\GridInformation\GridInformation.cs" />
-     <Compile Include="Assets\2d-extras-master\Runtime\Tiles\TerrainTile\TerrainTile.cs" />
-     <Compile Include="Assets\Resources\Scripts\Vehicles\VehicleMove.cs" />
-     <Compile Include="Assets\Resources\Scripts\Player\PlayerAnimation.cs" />
-     <Compile Include="Assets\Resources\Scripts\IDamageable.cs" />
-     <Compile Include="Assets\2d-extras-master\Runtime\Tiles\PipelineTile\PipelineTile.cs" />
-     <Compile Include="Assets\Resources\Scripts\Room Items\TriggerCollections.cs" />
-     <Compile Include="Assets\Resources\D_Scripts\Collections\Banana.cs" />
-     <Compile Include="Assets\Resources\D_Scripts\MessageSystem\CollectionCotroller.cs" />
-     <Compile Include="Assets\Resources\Scripts\Room Items\ColliderCollections.cs" />
-     <Compile Include="Assets\Scripts\BusController.cs" />
-     <Compile Include="Assets\Resources\Scripts\Room Items\ItemDestroy.cs" />
-     <Compile Include="Assets\Scripts\BusMove.cs" />
-     <Compile Include="Assets\Resources\Scripts\Manager\UIManager.cs" />
-     <Compile Include="Assets\Resources\Scripts\Save\SaveData.cs" />
-     <Compile Include="Assets\Resources\D_Scripts\PlayerHit\CheckLists.cs" />
-     <Compile Include="Assets\Scripts\RippleWater.cs" />
-     <Compile Include="Assets\Scripts\BazierFollow.cs" />
-     <Compile Include="Assets\Resources\D_Scripts\Enemies\TurkeyTriggerPoint.cs" />
-     <Compile Include="Assets\Resources\D_Scripts\Enemies\Turkey.cs" />
-     <Compile Include="Assets\Scripts\Dash_Shadow.cs" />
-     <Compile Include="Assets\Resources\D_Scripts\Enemies\FSM\D_PatrolState.cs" />
-     <Compile Include="Assets\Resources\Scripts\Room Items\Bag.cs" />
      <Compile Include="Assets\Resources\AudioManager\AudioMixerManager.cs" />
-     <Compile Include="Assets\Scripts\Route.cs" />
-     <Compile Include="Assets\InputMaster.cs" />
-     <Compile Include="Assets\2d-extras-master\Runtime\Brushes\TintTextureGenerator.cs" />
-     <Compile Include="Assets\Scripts\DestroyGlass.cs" />
-     <Compile Include="Assets\2d-extras-master\Runtime\Tiles\RuleOverrideTile\RuleOverrideTile.cs" />
      <Compile Include="Assets\BusScriptLevel_01.cs" />
      <Compile Include="Assets\DestroyBus.cs" />
      <Compile Include="Assets\Resources\AudioManager\AudioName.cs" />
-     <Compile Include="Assets\Resources\Scripts\Manager\LoadData.cs" />
-     <Compile Include="Assets\Resources\Scripts\Room Items\ItemColors.cs" />
-     <Compile Include="Assets\Resources\Scripts\Street\ObstaclesMove.cs" />
-     <Compile Include="Assets\Scripts\GrapplingGun.cs" />
-     <Compile Include="Assets\Resources\Scripts\Yoyo\yoyoRotation.cs" />
-     <Compile Include="Assets\Resources\D_Scripts\MessageSystem\CollectionData.cs" />
      <Compile Include="Assets\Resources\AudioManager\AudioManager.cs" />
-     <Compile Include="Assets\Resources\D_Scripts\Enemies\Duck.cs" />
-     <Compile Include="Assets\Resources\D_Scripts\PlayerHit\CheckPoint.cs" />
-     <Compile Include="Assets\2d-extras-master\Runtime\Tiles\IsometricRuleTile\IsometricRuleTile.cs" />
-     <Compile Include="Assets\2d-extras-master\Runtime\Tiles\HexagonalRuleTile\HexagonalRuleTile.cs" />
-     <Compile Include="Assets\2d-extras-master\Runtime\Tiles\RuleTile\RuleTile.cs" />
-     <Compile Include="Assets\Resources\D_Scripts\MessageSystem\MessageTest.cs" />
-     <Compile Include="Assets\Resources\Scripts\Room Items\FirstFindYoyo.cs" />
-     <Compile Include="Assets\Scripts\GameController.cs" />
-     <Compile Include="Assets\Scripts\WaterGrop.cs" />
-     <Compile Include="Assets\Resources\D_Scripts\PlayerHit\PlayerHitEnemy.cs" />
-     <Compile Include="Assets\Resources\D_Scripts\End\EndAndRestartGame.cs" />
-     <Compile Include="Assets\Scripts\GrapplePoint.cs" />
-     <Compile Include="Assets\Resources\Scripts\Street\WarnSign.cs" />
-     <Compile Include="Assets\Resources\D_Scripts\MessageSystem\MessageName.cs" />
-     <Compile Include="Assets\Scripts\DashAnimationController.cs" />
      <Compile Include="Assets\Resources\Retro Sound Effects\Demo\Demo.cs" />
-     <Compile Include="Assets\2d-extras-master\Runtime\Tiles\RuleOverrideTile\AdvancedRuleOverrideTile.cs" />
-     <Compile Include="Assets\Resources\Scripts\Yoyo\Box.cs" />
-     <Compile Include="Assets\Resources\Scripts\Player\WallCheck.cs" />
-     <Compile Include="Assets\Scripts\DashFX.cs" />
-     <Compile Include="Assets\Scripts\PedestrainLight.cs" />
-     <Compile Include="Assets\Resources\D_Scripts\Enemies\BlueBird.cs" />
-     <Compile Include="Assets\Resources\D_Scripts\MessageSystem\MessageCenter.cs" />
-     <Compile Include="Assets\Resources\Scripts\Manager\GameManager.cs" />
-     <Compile Include="Assets\Resources\Scripts\Street\WarnSignTrigger.cs" />
-     <Compile Include="Assets\Resources\Scripts\FX\JumpFX.cs" />
-     <Compile Include="Assets\Resources\D_Scripts\Start\DisappearStartMenu.cs" />
-     <Compile Include="Assets\Resources\Scripts\Room Items\CollectionAndDoors.cs" />
-     <Compile Include="Assets\Resources\Scripts\Room Items\Breakfast.cs" />
-     <Compile Include="Assets\Resources\D_Scripts\Start\StartPoint.cs" />
-     <Compile Include="Assets\Resources\Scripts\Manager\StartMenu.cs" />
-     <Compile Include="Assets\Resources\D_Scripts\Enemies\TurkeyHitPlayer.cs" />
-     <Compile Include="Assets\Resources\D_Scripts\PlayerHit\Spike.cs" />
-     <Compile Include="Assets\Resources\Scripts\Yoyo\Mechanics.cs" />
-     <Compile Include="Assets\Resources\Scripts\Room Items\RoomDoor.cs" />
-     <Compile Include="Assets\Resources\D_Scripts\MessageSystem\MessageData.cs" />
-     <Compile Include="Assets\Resources\D_Scripts\PlatformMove.cs" />
-     <Compile Include="Assets\Resources\D_Scripts\PlayerHit\PlayerCheck.cs" />
-     <Compile Include="Assets\Scripts\GrapplingRope.cs" />
-     <Compile Include="Assets\Scripts\PlayerController.cs" />
-     <Compile Include="Assets\Resources\D_Scripts\Collections\Apple.cs" />
-     <Compile Include="Assets\2d-extras-master\Runtime\Tiles\AnimatedTile\AnimatedTile.cs" />
-     <Compile Include="Assets\2d-extras-master\Runtime\Tiles\WeightedRandomTile\WeightedRandomTile.cs" />
-     <Compile Include="Assets\Resources\Scripts\AscendingSlide.cs" />
-     <Compile Include="Assets\Resources\D_Scripts\Enemies\AllEnemies.cs" />
-     <Compile Include="Assets\Scripts\GrapplePointCheck.cs" />
-     <Compile Include="Assets\Resources\D_Scripts\Enemies\FSM\D_EnemyState.cs" />
-     <Compile Include="Assets\Resources\D_Scripts\PlayerHit\Fire.cs" />
-     <None Include="Assets\SimplePixelUI\fonts\Font2\license.txt" />
-     <None Include="Assets\SimplePixelUI\fonts\Font1\license.txt" />
-     <None Include="Assets\SimplePixelUI\fonts\Font1\readme.txt" />
-     <None Include="Assets\SimplePixelUI\fonts\Font2\readme.txt" />
-     <None Include="Assets\Nature_pixel_art_assets\pixel_snapping_README.txt" />
  <Reference Include="UnityEngine">
  <HintPath>/Applications/Unity/Hub/Editor/2020.3.20f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.dll</HintPath>
  </Reference>
@@ -821,6 +732,26 @@
     <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
       <Project>{3d8f64a3-c7e2-5574-e337-94c11c97a775}</Project>
       <Name>Assembly-CSharp-firstpass</Name>
+    </ProjectReference>
+    <ProjectReference Include="External.csproj">
+      <Project>{0d20a7a7-6cec-7ede-a14f-b0c7708eaf31}</Project>
+      <Name>External</Name>
+    </ProjectReference>
+    <ProjectReference Include="Animation.csproj">
+      <Project>{ebe0a2b9-7551-e930-5eb5-ae208ab3724e}</Project>
+      <Name>Animation</Name>
+    </ProjectReference>
+    <ProjectReference Include="Controller.csproj">
+      <Project>{d6523534-154b-54a3-3916-764900ca6afe}</Project>
+      <Name>Controller</Name>
+    </ProjectReference>
+    <ProjectReference Include="Grapple.csproj">
+      <Project>{6ef68255-8f0a-15bb-c902-e6f8d63fbd64}</Project>
+      <Name>Grapple</Name>
+    </ProjectReference>
+    <ProjectReference Include="Player.csproj">
+      <Project>{9082f134-05a8-1d81-e8ec-e06a580137c6}</Project>
+      <Name>Player</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
