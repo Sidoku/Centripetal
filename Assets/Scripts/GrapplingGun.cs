@@ -9,6 +9,9 @@ public class GrapplingGun : MonoBehaviour
 
     InputMaster controls;
 
+    [Header("Grapple Length")] 
+    public int grappleLength;
+
     [Header("Scripts Ref:")]
     public GrapplingRope grappleRope;
 
@@ -170,7 +173,7 @@ public class GrapplingGun : MonoBehaviour
     {
         foreach (var points in GameController.Instance.grapplePoints)
         {
-            if (Vector2.Distance(transform.position,points.position) < 10f)
+            if (Vector2.Distance(transform.position,points.position) < grappleLength)
             {
                 // points.gameObject.GetComponent<Animator>().SetTrigger("isGrappled");
                 grapplePoint = points.position;
@@ -181,7 +184,6 @@ public class GrapplingGun : MonoBehaviour
                     return;
                 }
                 grappleRope.enabled = true;
-              //  isGrappled = true;
             }
         }
         // Vector2 distanceVector = m_camera.ScreenToWorldPoint(Input.mousePosition) - gunPivot.position;
@@ -255,6 +257,8 @@ public class GrapplingGun : MonoBehaviour
         {
             Gizmos.color = Color.green;
             Gizmos.DrawWireSphere(firePoint.position, maxDistnace);
+            Gizmos.color = Color.blue;
+            Gizmos.DrawWireSphere(firePoint.position, grappleLength);
         }
     }
 
