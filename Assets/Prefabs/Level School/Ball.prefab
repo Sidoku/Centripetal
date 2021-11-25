@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4543459426971435346}
   - component: {fileID: -2459536817474239716}
   - component: {fileID: 3219885863829574868}
+  - component: {fileID: 4786209085893206014}
   m_Layer: 4
   m_Name: Ball
   m_TagString: Ground
@@ -120,4 +121,16 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 5
+  m_Constraints: 4
+--- !u!114 &4786209085893206014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3773266304938599641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c56326e43c8397c4398f1d304ce68f36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
