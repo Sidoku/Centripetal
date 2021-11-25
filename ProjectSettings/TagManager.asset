@@ -8,6 +8,8 @@ TagManager:
   - Ceiling
   - Slope
   - Ball
+  - Glass
+  - Box
   layers:
   - Default
   - TransparentFX
@@ -17,7 +19,7 @@ TagManager:
   - UI
   - Bounce Grapple
   - Ceiling
-  - 
+  - Trampoline
   - 
   - 
   - 

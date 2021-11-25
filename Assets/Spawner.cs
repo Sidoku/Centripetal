@@ -17,9 +17,10 @@ public class Spawner : MonoBehaviour
     public void SpawnObject()
     {
         Instantiate(spawnee, transform.position, transform.rotation);
-        if (stopSpawning)
-        {
-            CancelInvoke("SpawnObject");
-        }
+        /*
+                if (stopSpawning)
+                {
+                    CancelInvoke("SpawnObject");
+                }*/
     }
 }

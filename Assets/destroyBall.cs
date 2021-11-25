@@ -4,9 +4,18 @@ using UnityEngine;
 
 public class destroyBall : MonoBehaviour
 {
-    public float destroyDelay = 6f;
-    void DestroyObjectDelayed()
+    public float ballBust;
+
+    void Start()
     {
-        Destroy(gameObject, destroyDelay);
+        StartCoroutine(SelfDestruct());
+    }
+
+    IEnumerator SelfDestruct()
+    {
+        yield return new WaitForSeconds(ballBust);
+        Destroy(gameObject);
+        Debug.Log("Destroyed");
     }
 }
+
