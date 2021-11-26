@@ -358,11 +358,11 @@ public class PlayerController : MonoBehaviour
             other.gameObject.GetComponent<Animator>().SetTrigger("isPlayer");
             Debug.Log("1");
         }
-        if (other.transform.gameObject.tag =="Ground")
+       /* if (other.transform.gameObject.tag =="Ground")
         {
             jumps = maxJumps;
             boost = maxBoost;
-        }
+        }*/
         if (other.transform.name.StartsWith("Ripple"))
         {
             banMovement = true;
