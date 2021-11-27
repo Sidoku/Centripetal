@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1470886156838306247}
   - component: {fileID: 2936784658507524993}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Time
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -213,6 +213,7 @@ GameObject:
   - component: {fileID: 1470886158248197836}
   - component: {fileID: 1470886158248197837}
   - component: {fileID: 1470886158248197874}
+  - component: {fileID: 2717422236575911694}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -302,3 +303,15 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &2717422236575911694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1470886158248197875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c38ccfe12d81d4594adf874fa0523c40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

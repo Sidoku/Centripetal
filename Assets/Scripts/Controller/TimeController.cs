@@ -12,7 +12,7 @@ public class TimeController : MonoBehaviour
 
     private TimeSpan timePlaying;
     private bool timerGoing;
-    private float elapseTime;
+    public float elapseTime;
     private void Awake()
     {
         instance = this;
@@ -29,7 +29,7 @@ public class TimeController : MonoBehaviour
         timerGoing = true;
         elapseTime = 0f;
         StartCoroutine(UpdateTime());
-
+        
     }
 
     public void EndTimer()
@@ -39,20 +39,16 @@ public class TimeController : MonoBehaviour
 
     IEnumerator UpdateTime()
     {
+        Debug.Log("enter update");
         while (timerGoing)
         {
             elapseTime += Time.deltaTime;//start add time. then change this to timespan, give that value to timeplaying
             timePlaying = TimeSpan.FromSeconds(elapseTime);
             string timePlayingString = "Time:" + timePlaying.ToString("mm\\:ss");//minute : second, if want ff, +.'ff'
             time.text = timePlayingString;
-
+            
             yield return null;
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
