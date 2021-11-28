@@ -39,7 +39,6 @@ public class TimeController : MonoBehaviour
 
     IEnumerator UpdateTime()
     {
-        Debug.Log("enter update");
         while (timerGoing)
         {
             elapseTime += Time.deltaTime;//start add time. then change this to timespan, give that value to timeplaying

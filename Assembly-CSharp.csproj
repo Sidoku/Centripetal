@@ -757,6 +757,10 @@
       <Project>{142f3661-dd99-d5ca-25c3-b6018444338d}</Project>
       <Name>UI</Name>
     </ProjectReference>
+    <ProjectReference Include="InputMaster.csproj">
+      <Project>{c4af7579-9640-7b88-8c77-f5641afc51c2}</Project>
+      <Name>InputMaster</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

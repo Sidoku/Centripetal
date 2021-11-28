@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class UIDontDestroyOnLoad : MonoBehaviour
 {
+    private bool isPaused;
     private static UIDontDestroyOnLoad instance;
     private void Awake()
     {
@@ -19,4 +20,6 @@ public class UIDontDestroyOnLoad : MonoBehaviour
         }
        
     }
+
+
 }

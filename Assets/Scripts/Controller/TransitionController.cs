@@ -18,10 +18,10 @@ public class TransitionController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            LoadNextLevel();
-        }
+        // if (Input.GetMouseButtonDown(0))
+        // {
+        //     LoadNextLevel();
+        // }
 
         if (tempLevelID != SceneManager.GetActiveScene().buildIndex) 
         {
