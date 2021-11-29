@@ -11,7 +11,7 @@ public class RippleWater : MonoBehaviour
 
     void Start()
     {
-        // var destinationPoint = new Vector2(startPoint.transform.position.x, PlayerController.Instance.transform.position.y);
+        var destinationPoint = new Vector2(startPoint.transform.position.x, PlayerController.Instance.transform.position.y);
     }
     void Update()
     {
@@ -36,7 +36,6 @@ public class RippleWater : MonoBehaviour
             isPlayer = true;
             PlayerController.Instance.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
             gameObject.GetComponent<Animator>().SetBool("isPlayer",isPlayer);
-            // Debug.Log("haha");
         }
     }
 

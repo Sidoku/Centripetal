@@ -114867,6 +114867,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87055dea6612d6f4db6304c1dbf5ae0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  grappleLength: 0
   grappleRope: {fileID: 428185560}
   isGrappled: 0
   grappleToAll: 0
@@ -120960,7 +120961,7 @@ SpriteRenderer:
   m_Size: {x: 2, y: 2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1642605706

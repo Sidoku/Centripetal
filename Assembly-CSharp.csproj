@@ -52,6 +52,8 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\Prefabs\Level School\Spawner.cs" />
+     <Compile Include="Assets\Prefabs\Level School\destroyBall.cs" />
      <Compile Include="Assets\Resources\AudioManager\AudioMixerManager.cs" />
      <Compile Include="Assets\BusScriptLevel_01.cs" />
      <Compile Include="Assets\DestroyBus.cs" />
@@ -745,6 +747,10 @@
       <Project>{0d20a7a7-6cec-7ede-a14f-b0c7708eaf31}</Project>
       <Name>External</Name>
     </ProjectReference>
+    <ProjectReference Include="InputMaster.csproj">
+      <Project>{c4af7579-9640-7b88-8c77-f5641afc51c2}</Project>
+      <Name>InputMaster</Name>
+    </ProjectReference>
     <ProjectReference Include="Controller.csproj">
       <Project>{d6523534-154b-54a3-3916-764900ca6afe}</Project>
       <Name>Controller</Name>
@@ -756,10 +762,6 @@
     <ProjectReference Include="UI.csproj">
       <Project>{142f3661-dd99-d5ca-25c3-b6018444338d}</Project>
       <Name>UI</Name>
-    </ProjectReference>
-    <ProjectReference Include="InputMaster.csproj">
-      <Project>{c4af7579-9640-7b88-8c77-f5641afc51c2}</Project>
-      <Name>InputMaster</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
