@@ -54,11 +54,8 @@
   <ItemGroup>
      <Compile Include="Assets\Prefabs\Level School\Spawner.cs" />
      <Compile Include="Assets\Prefabs\Level School\destroyBall.cs" />
-     <Compile Include="Assets\Resources\AudioManager\AudioMixerManager.cs" />
      <Compile Include="Assets\BusScriptLevel_01.cs" />
      <Compile Include="Assets\DestroyBus.cs" />
-     <Compile Include="Assets\Resources\AudioManager\AudioName.cs" />
-     <Compile Include="Assets\Resources\AudioManager\AudioManager.cs" />
      <Compile Include="Assets\Resources\Retro Sound Effects\Demo\Demo.cs" />
  <Reference Include="UnityEngine">
  <HintPath>/Applications/Unity/Hub/Editor/2020.3.20f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.dll</HintPath>
@@ -762,6 +759,10 @@
     <ProjectReference Include="UI.csproj">
       <Project>{142f3661-dd99-d5ca-25c3-b6018444338d}</Project>
       <Name>UI</Name>
+    </ProjectReference>
+    <ProjectReference Include="Audio.csproj">
+      <Project>{d93406ec-7f85-c7a2-7e05-aafef3aa7bc8}</Project>
+      <Name>Audio</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

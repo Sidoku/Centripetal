@@ -73,7 +73,6 @@ public class GrapplingGun : MonoBehaviour
     private void Awake()
     {
         controls = new InputMaster();
-   
     }
 
     private void Start()
@@ -175,9 +174,7 @@ public class GrapplingGun : MonoBehaviour
         {
             if (Vector2.Distance(transform.position,points.position) < grappleLength)
             {
-                // points.gameObject.GetComponent<Animator>().SetTrigger("isGrappled");
                 grapplePoint = points.position;
-                //             Debug.Log(grapplePoint);
                 grappleDistanceVector = grapplePoint - (Vector2)gunPivot.position;
                 if (grapplePoint.x == 0f || grapplePoint.y == 0f)
                 {

@@ -69,6 +69,7 @@ public class GrapplingRope : MonoBehaviour
             }
             else
             {
+                AudioManager.PlayAudio(AudioName.Grapple);
                 DrawRopeWaves();
             }
         }
