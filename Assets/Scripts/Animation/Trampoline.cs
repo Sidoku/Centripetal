@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Trampoline : MonoBehaviour
 {
-    public int jumpForce;
+    //public int jumpForce;
 
     // private void OnTriggerEnter2D(Collider2D other)
     // {
