@@ -739,6 +739,10 @@
       <Project>{6ef68255-8f0a-15bb-c902-e6f8d63fbd64}</Project>
       <Name>Grapple</Name>
     </ProjectReference>
+    <ProjectReference Include="Audio.csproj">
+      <Project>{d93406ec-7f85-c7a2-7e05-aafef3aa7bc8}</Project>
+      <Name>Audio</Name>
+    </ProjectReference>
     <ProjectReference Include="External.csproj">
       <Project>{0d20a7a7-6cec-7ede-a14f-b0c7708eaf31}</Project>
       <Name>External</Name>
@@ -758,10 +762,6 @@
     <ProjectReference Include="UI.csproj">
       <Project>{142f3661-dd99-d5ca-25c3-b6018444338d}</Project>
       <Name>UI</Name>
-    </ProjectReference>
-    <ProjectReference Include="Audio.csproj">
-      <Project>{d93406ec-7f85-c7a2-7e05-aafef3aa7bc8}</Project>
-      <Name>Audio</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
