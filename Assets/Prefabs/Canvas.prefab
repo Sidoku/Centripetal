@@ -292,6 +292,7 @@ GameObject:
   - component: {fileID: 2717422236575911694}
   - component: {fileID: 6356002494332059077}
   - component: {fileID: 4681954158782299420}
+  - component: {fileID: 8765068638786197924}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -420,6 +421,59 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 7551817452582892798}
+--- !u!114 &8765068638786197924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1470886158248197875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97b1674d34dcb4c3b9d41bb19dad8c5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - clip: {fileID: 8300000, guid: 674c68dff765747128d991a259094489, type: 3}
+    outputGroup: {fileID: -5955332437950274656, guid: 6c02b6b7430504952b47d19902824dc8, type: 2}
+    volume: 2
+    playOnAwake: 0
+    loop: 0
+  - clip: {fileID: 8300000, guid: 79e4652cbc87d41368a1511f07559a1f, type: 3}
+    outputGroup: {fileID: -5955332437950274656, guid: 6c02b6b7430504952b47d19902824dc8, type: 2}
+    volume: 1
+    playOnAwake: 0
+    loop: 0
+  - clip: {fileID: 8300000, guid: a9f3b7fc426d8421d830bde24dc3fcf8, type: 3}
+    outputGroup: {fileID: -5955332437950274656, guid: 6c02b6b7430504952b47d19902824dc8, type: 2}
+    volume: 1
+    playOnAwake: 0
+    loop: 0
+  - clip: {fileID: 8300000, guid: 1f674071e3a8842c5a92a34c686cdcf9, type: 3}
+    outputGroup: {fileID: -5955332437950274656, guid: 6c02b6b7430504952b47d19902824dc8, type: 2}
+    volume: 1
+    playOnAwake: 0
+    loop: 0
+  - clip: {fileID: 8300000, guid: adccb131760b04163ae8c07f9b268a22, type: 3}
+    outputGroup: {fileID: -5955332437950274656, guid: 6c02b6b7430504952b47d19902824dc8, type: 2}
+    volume: 2
+    playOnAwake: 0
+    loop: 0
+  - clip: {fileID: 8300000, guid: ffb159a21c8a04135a5616979c828fab, type: 3}
+    outputGroup: {fileID: -5955332437950274656, guid: 6c02b6b7430504952b47d19902824dc8, type: 2}
+    volume: 1
+    playOnAwake: 0
+    loop: 0
+  - clip: {fileID: 8300000, guid: 2c5292ba5cf254919a6b9e2b18e04f49, type: 3}
+    outputGroup: {fileID: -5955332437950274656, guid: 6c02b6b7430504952b47d19902824dc8, type: 2}
+    volume: 0.5
+    playOnAwake: 0
+    loop: 0
+  - clip: {fileID: 8300000, guid: f6f3745a020a042fe9c1d2005ca7378f, type: 3}
+    outputGroup: {fileID: 8470672847087512924, guid: 6c02b6b7430504952b47d19902824dc8, type: 2}
+    volume: 0.22
+    playOnAwake: 0
+    loop: 0
 --- !u!1 &2436909787891939249
 GameObject:
   m_ObjectHideFlags: 0

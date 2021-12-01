@@ -26,4 +26,9 @@ public class Trampoline : MonoBehaviour
             transform.GetComponentInParent<Animator>().SetTrigger("isPlayer");
         }
     }
+
+    public void BounceSound()
+    {
+        AudioManager.PlayAudio(AudioName.Bounce);
+    }
 }

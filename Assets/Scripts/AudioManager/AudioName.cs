@@ -20,18 +20,34 @@ public static class AudioName
     
     public static string CarHone_1
     {
-        get => "Car Hone 1";
+        get => "Car1";
     }
 
     public static string CarHone_2
     {
-        get => "Car Hone 2";
+        get => "Car2";
     }
     
     public static string Bounce
     {
         get => "Boing";
     }
+    
+    public static string Click
+    {
+        get => "DM-CGS-21";
+    }
+    
+    public static string Jump
+    {
+        get => "DM-CGS-07";
+    }
+    
+    public static string BGM
+    {
+        get => "Action 1";
+    }
+    
     
     
     public static string Win
@@ -54,25 +70,8 @@ public static class AudioName
         get => "DM-CGS-18";
     }
     
-    public static string Skill01
-    {
-        get => "DM-CGS-11";
-    }
-    public static string Skill02
-    {
-        get => "DM-CGS-46";
-    }
     
-    public static string Skill04
-    {
-        get => "DM-CGS-25";
-    }
-    
-    
-    public static string MainBGM
-    {
-        get => "Main_BGM";
-    }
+   
     
     public static string MenuBGM
     {

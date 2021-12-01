@@ -190,6 +190,7 @@ public class PlayerController : MonoBehaviour
 
         if (jumps > 0)
         {
+            AudioManager.PlayAudio(AudioName.Jump);
             //xue qing's version
             isJump = true;
             canJump = true;

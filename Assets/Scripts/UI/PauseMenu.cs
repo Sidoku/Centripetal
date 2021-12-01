@@ -53,12 +53,14 @@ public class PauseMenu : MonoBehaviour
         if (clickTime == 0)
         {
             pauseMenu.gameObject.SetActive(true);
+            AudioManager.StopAudio(AudioName.BGM);
             Time.timeScale = 0;
             clickTime++;
         }
         else if (clickTime == 1)
         {
             pauseMenu.gameObject.SetActive(false);
+            AudioManager.PlayAudio(AudioName.BGM);
             Time.timeScale = 1;
             clickTime = 0;
         }

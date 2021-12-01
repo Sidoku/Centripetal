@@ -29,7 +29,7 @@ public class TimeController : MonoBehaviour
         timerGoing = true;
         elapseTime = 0f;
         StartCoroutine(UpdateTime());
-        
+        AudioManager.PlayAudio(AudioName.BGM);
     }
 
     public void EndTimer()
