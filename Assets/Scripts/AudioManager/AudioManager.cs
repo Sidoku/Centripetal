@@ -35,7 +35,6 @@ public class AudioManager : MonoBehaviour
         {
             //设置名字 把这个gameobject放置在GameManager下面 成为子物体
             var obj = new GameObject(sound.clip.name);
-            Debug.Log(sound.clip.name);
             obj.transform.SetParent(transform);
             AudioSource source = obj.AddComponent<AudioSource>();
             //直接通过面板赋值 然后传值
