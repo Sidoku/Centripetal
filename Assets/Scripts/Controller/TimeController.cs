@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class TimeController : MonoBehaviour
@@ -11,6 +12,7 @@ public class TimeController : MonoBehaviour
     public Text time;
     public Text finalTime;
     public GameObject finalMenu;
+    public GameObject finalRestartButton;
     private string timePlayingString;
 
     private TimeSpan timePlaying;
@@ -62,11 +64,14 @@ public class TimeController : MonoBehaviour
         }
     }
 
-    private void ShowEndMenu()
+    public void ShowEndMenu()
     {
         finalMenu.SetActive(true);
         EndTimer();
+        var eventSystem = EventSystem.current;
+        eventSystem.SetSelectedGameObject(finalRestartButton, new BaseEventData(eventSystem));
         finalTime.text = timePlayingString;
+        timePlaying = TimeSpan.Zero;
     }
 
 }

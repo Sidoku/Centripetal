@@ -6,14 +6,9 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [Header("Player in the room")]
-    // public GameObject Bag;
     public static PlayerController Instance;
 
     public float speed, jumpForce;
-    //public int playerGravityScale;
-    // [Header("Player State")] 
-    // public float health;
-    // public bool isDead;
 
     [Header("States Check")] public bool isGround;
     public bool isJump;
@@ -365,6 +360,11 @@ public class PlayerController : MonoBehaviour
         if (other.transform.name.StartsWith("Ripple"))
         {
             banMovement = true;
+        }
+
+        if (other.transform.name.StartsWith("GameEnd"))
+        {
+            TimeController.instance.ShowEndMenu();
         }
     }
 

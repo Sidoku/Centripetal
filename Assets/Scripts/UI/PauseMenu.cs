@@ -29,6 +29,7 @@ public class PauseMenu : MonoBehaviour
     private void Update()
     {
         controls.Player.Pause.performed += ctx => ShowPauseMenu();
+       
     }
 
     //event function
