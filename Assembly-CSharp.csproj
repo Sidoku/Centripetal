@@ -52,11 +52,27 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\2d-extras-master\Runtime\Tiles\RandomTile\RandomTile.cs" />
+     <Compile Include="Assets\2d-extras-master\Runtime\GridInformation\GridInformation.cs" />
+     <Compile Include="Assets\2d-extras-master\Runtime\Tiles\TerrainTile\TerrainTile.cs" />
+     <Compile Include="Assets\2d-extras-master\Runtime\Tiles\PipelineTile\PipelineTile.cs" />
      <Compile Include="Assets\Prefabs\Level School\Spawner.cs" />
      <Compile Include="Assets\Prefabs\Level School\destroyBall.cs" />
+     <Compile Include="Assets\2d-extras-master\Runtime\Brushes\TintTextureGenerator.cs" />
+     <Compile Include="Assets\2d-extras-master\Runtime\Tiles\RuleOverrideTile\RuleOverrideTile.cs" />
      <Compile Include="Assets\BusScriptLevel_01.cs" />
      <Compile Include="Assets\DestroyBus.cs" />
+     <Compile Include="Assets\2d-extras-master\Runtime\Tiles\IsometricRuleTile\IsometricRuleTile.cs" />
+     <Compile Include="Assets\2d-extras-master\Runtime\Tiles\HexagonalRuleTile\HexagonalRuleTile.cs" />
+     <Compile Include="Assets\2d-extras-master\Runtime\Tiles\RuleTile\RuleTile.cs" />
      <Compile Include="Assets\Resources\Retro Sound Effects\Demo\Demo.cs" />
+     <Compile Include="Assets\2d-extras-master\Runtime\Tiles\RuleOverrideTile\AdvancedRuleOverrideTile.cs" />
+     <Compile Include="Assets\2d-extras-master\Runtime\Tiles\AnimatedTile\AnimatedTile.cs" />
+     <Compile Include="Assets\2d-extras-master\Runtime\Tiles\WeightedRandomTile\WeightedRandomTile.cs" />
+     <None Include="Assets\SimplePixelUI\fonts\Font2\license.txt" />
+     <None Include="Assets\SimplePixelUI\fonts\Font1\license.txt" />
+     <None Include="Assets\SimplePixelUI\fonts\Font1\readme.txt" />
+     <None Include="Assets\SimplePixelUI\fonts\Font2\readme.txt" />
  <Reference Include="UnityEngine">
  <HintPath>/Applications/Unity/Hub/Editor/2020.3.20f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.dll</HintPath>
  </Reference>
@@ -743,10 +759,6 @@
     <ProjectReference Include="Audio.csproj">
       <Project>{d93406ec-7f85-c7a2-7e05-aafef3aa7bc8}</Project>
       <Name>Audio</Name>
-    </ProjectReference>
-    <ProjectReference Include="External.csproj">
-      <Project>{0d20a7a7-6cec-7ede-a14f-b0c7708eaf31}</Project>
-      <Name>External</Name>
     </ProjectReference>
     <ProjectReference Include="InputMaster.csproj">
       <Project>{c4af7579-9640-7b88-8c77-f5641afc51c2}</Project>

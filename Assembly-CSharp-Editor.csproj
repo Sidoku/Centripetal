@@ -52,30 +52,30 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Project\External\2d-extras-master\Editor\Brushes\CoordinateBrush\CoordinateBrush.cs" />
-     <Compile Include="Assets\Project\External\2d-extras-master\Editor\Tiles\Menu\PipelineTileMenu.cs" />
-     <Compile Include="Assets\Project\External\2d-extras-master\Tests\Editor\PlaceholderTests.cs" />
-     <Compile Include="Assets\Project\External\2d-extras-master\Editor\Menu\CustomRuleTileMenu.cs" />
-     <Compile Include="Assets\Project\External\2d-extras-master\Editor\Tiles\RuleTile\RuleTileEditor.cs" />
-     <Compile Include="Assets\Project\External\2d-extras-master\Editor\Brushes\PrefabBrushes\PrefabRandomBrush\PrefabRandomBrush.cs" />
-     <Compile Include="Assets\Project\External\2d-extras-master\Editor\Brushes\GameObjectBrush\GameObjectBrush.cs" />
-     <Compile Include="Assets\Project\External\2d-extras-master\Editor\Brushes\PrefabBrushes\PrefabBrush\PrefabBrush.cs" />
-     <Compile Include="Assets\Project\External\2d-extras-master\Editor\Brushes\RandomBrush\RandomBrush.cs" />
-     <Compile Include="Assets\Project\External\2d-extras-master\Editor\Tiles\RuleOverrideTile\PopulateRuleOverrideTileWizard.cs" />
-     <Compile Include="Assets\Project\External\2d-extras-master\Editor\Tiles\RuleOverrideTile\RuleOverrideTileEditor.cs" />
-     <Compile Include="Assets\Project\External\2d-extras-master\Editor\Brushes\PrefabBrushes\BrushMenuItem.cs" />
-     <Compile Include="Assets\Project\External\2d-extras-master\Editor\Tiles\Menu\TerrainTileMenu.cs" />
-     <Compile Include="Assets\Project\External\2d-extras-master\Editor\Brushes\TintBrushSmooth\TintBrushSmooth.cs" />
-     <Compile Include="Assets\Project\External\2d-extras-master\Editor\Brushes\GroupBrush\GroupBrush.cs" />
-     <Compile Include="Assets\Project\External\2d-extras-master\Editor\Brushes\PrefabBrushes\BasePrefabBrush.cs" />
-     <Compile Include="Assets\Project\External\2d-extras-master\Editor\Menu\MenuItemOrder.cs" />
-     <Compile Include="Assets\Project\External\2d-extras-master\Editor\Brushes\TintBrush\TintBrush.cs" />
-     <Compile Include="Assets\Project\External\2d-extras-master\Editor\Tiles\HexagonalRuleTile\HexagonalRuleTileEditor.cs" />
-     <Compile Include="Assets\Project\External\2d-extras-master\Editor\Tiles\RuleOverrideTile\AdvancedRuleOverrideTileEditor.cs" />
-     <Compile Include="Assets\Project\External\2d-extras-master\Editor\Tiles\Menu\RandomTileMenu.cs" />
-     <Compile Include="Assets\Project\External\2d-extras-master\Editor\Brushes\LineBrush\LineBrush.cs" />
-     <Compile Include="Assets\Project\External\2d-extras-master\Editor\Tiles\IsometricRuleTile\IsometricRuleTileEditor.cs" />
-     <Compile Include="Assets\Project\External\2d-extras-master\Editor\Tiles\Menu\WeightedRandomTileMenu.cs" />
+     <Compile Include="Assets\2d-extras-master\Editor\Brushes\CoordinateBrush\CoordinateBrush.cs" />
+     <Compile Include="Assets\2d-extras-master\Editor\Tiles\Menu\PipelineTileMenu.cs" />
+     <Compile Include="Assets\2d-extras-master\Tests\Editor\PlaceholderTests.cs" />
+     <Compile Include="Assets\2d-extras-master\Editor\Menu\CustomRuleTileMenu.cs" />
+     <Compile Include="Assets\2d-extras-master\Editor\Tiles\RuleTile\RuleTileEditor.cs" />
+     <Compile Include="Assets\2d-extras-master\Editor\Brushes\PrefabBrushes\PrefabRandomBrush\PrefabRandomBrush.cs" />
+     <Compile Include="Assets\2d-extras-master\Editor\Brushes\GameObjectBrush\GameObjectBrush.cs" />
+     <Compile Include="Assets\2d-extras-master\Editor\Brushes\PrefabBrushes\PrefabBrush\PrefabBrush.cs" />
+     <Compile Include="Assets\2d-extras-master\Editor\Brushes\RandomBrush\RandomBrush.cs" />
+     <Compile Include="Assets\2d-extras-master\Editor\Tiles\RuleOverrideTile\PopulateRuleOverrideTileWizard.cs" />
+     <Compile Include="Assets\2d-extras-master\Editor\Tiles\RuleOverrideTile\RuleOverrideTileEditor.cs" />
+     <Compile Include="Assets\2d-extras-master\Editor\Brushes\PrefabBrushes\BrushMenuItem.cs" />
+     <Compile Include="Assets\2d-extras-master\Editor\Tiles\Menu\TerrainTileMenu.cs" />
+     <Compile Include="Assets\2d-extras-master\Editor\Brushes\TintBrushSmooth\TintBrushSmooth.cs" />
+     <Compile Include="Assets\2d-extras-master\Editor\Brushes\GroupBrush\GroupBrush.cs" />
+     <Compile Include="Assets\2d-extras-master\Editor\Brushes\PrefabBrushes\BasePrefabBrush.cs" />
+     <Compile Include="Assets\2d-extras-master\Editor\Menu\MenuItemOrder.cs" />
+     <Compile Include="Assets\2d-extras-master\Editor\Brushes\TintBrush\TintBrush.cs" />
+     <Compile Include="Assets\2d-extras-master\Editor\Tiles\HexagonalRuleTile\HexagonalRuleTileEditor.cs" />
+     <Compile Include="Assets\2d-extras-master\Editor\Tiles\RuleOverrideTile\AdvancedRuleOverrideTileEditor.cs" />
+     <Compile Include="Assets\2d-extras-master\Editor\Tiles\Menu\RandomTileMenu.cs" />
+     <Compile Include="Assets\2d-extras-master\Editor\Brushes\LineBrush\LineBrush.cs" />
+     <Compile Include="Assets\2d-extras-master\Editor\Tiles\IsometricRuleTile\IsometricRuleTileEditor.cs" />
+     <Compile Include="Assets\2d-extras-master\Editor\Tiles\Menu\WeightedRandomTileMenu.cs" />
  <Reference Include="UnityEngine">
  <HintPath>/Applications/Unity/Hub/Editor/2020.3.20f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.dll</HintPath>
  </Reference>
@@ -790,6 +790,34 @@
     <ProjectReference Include="Assembly-CSharp.csproj">
       <Project>{fdba82f7-0c8b-8156-e895-c21f23f11413}</Project>
       <Name>Assembly-CSharp</Name>
+    </ProjectReference>
+    <ProjectReference Include="Player.csproj">
+      <Project>{9082f134-05a8-1d81-e8ec-e06a580137c6}</Project>
+      <Name>Player</Name>
+    </ProjectReference>
+    <ProjectReference Include="Grapple.csproj">
+      <Project>{6ef68255-8f0a-15bb-c902-e6f8d63fbd64}</Project>
+      <Name>Grapple</Name>
+    </ProjectReference>
+    <ProjectReference Include="Audio.csproj">
+      <Project>{d93406ec-7f85-c7a2-7e05-aafef3aa7bc8}</Project>
+      <Name>Audio</Name>
+    </ProjectReference>
+    <ProjectReference Include="InputMaster.csproj">
+      <Project>{c4af7579-9640-7b88-8c77-f5641afc51c2}</Project>
+      <Name>InputMaster</Name>
+    </ProjectReference>
+    <ProjectReference Include="Controller.csproj">
+      <Project>{d6523534-154b-54a3-3916-764900ca6afe}</Project>
+      <Name>Controller</Name>
+    </ProjectReference>
+    <ProjectReference Include="Animation.csproj">
+      <Project>{ebe0a2b9-7551-e930-5eb5-ae208ab3724e}</Project>
+      <Name>Animation</Name>
+    </ProjectReference>
+    <ProjectReference Include="UI.csproj">
+      <Project>{142f3661-dd99-d5ca-25c3-b6018444338d}</Project>
+      <Name>UI</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

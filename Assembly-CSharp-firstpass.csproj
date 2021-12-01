@@ -743,10 +743,6 @@
       <Project>{d93406ec-7f85-c7a2-7e05-aafef3aa7bc8}</Project>
       <Name>Audio</Name>
     </ProjectReference>
-    <ProjectReference Include="External.csproj">
-      <Project>{0d20a7a7-6cec-7ede-a14f-b0c7708eaf31}</Project>
-      <Name>External</Name>
-    </ProjectReference>
     <ProjectReference Include="InputMaster.csproj">
       <Project>{c4af7579-9640-7b88-8c77-f5641afc51c2}</Project>
       <Name>InputMaster</Name>
