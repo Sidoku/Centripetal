@@ -2,11 +2,13 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
     public GameObject pauseMenu;
+    public GameObject restartButton;
     // Input 
     private int clickTime;
     private InputMaster controls;
@@ -53,6 +55,8 @@ public class PauseMenu : MonoBehaviour
     {
         if (clickTime == 0)
         {
+            var eventSystem = UnityEngine.EventSystems.EventSystem.current;
+            eventSystem.SetSelectedGameObject(restartButton, new BaseEventData(eventSystem));
             pauseMenu.gameObject.SetActive(true);
             AudioManager.StopAudio(AudioName.BGM);
             Time.timeScale = 0;
@@ -68,5 +72,14 @@ public class PauseMenu : MonoBehaviour
        
        
     }
-    
+
+    //event function
+    public void ClosePauseMenu()
+    {
+        TimeController.instance.EndTimer();
+        TimeController.instance.timePlaying = TimeSpan.Zero;
+        TimeController.instance.timeMenu.SetActive(false);
+        pauseMenu.gameObject.SetActive(false);
+        Time.timeScale = 1;
+    }
 }

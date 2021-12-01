@@ -220,7 +220,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1470886158248197875, guid: c4108e7bf2dcb4400a62a35a1fea6cc7, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3753256334069310793, guid: c4108e7bf2dcb4400a62a35a1fea6cc7, type: 3}
+      propertyPath: endMenuFirstButton
+      value: 
+      objectReference: {fileID: 1667746430}
+    - target: {fileID: 3757707631896281176, guid: c4108e7bf2dcb4400a62a35a1fea6cc7, type: 3}
+      propertyPath: endMenuFirstButton
+      value: 
+      objectReference: {fileID: 1667746430}
+    - target: {fileID: 6395454676627599570, guid: c4108e7bf2dcb4400a62a35a1fea6cc7, type: 3}
+      propertyPath: m_FirstSelected
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c4108e7bf2dcb4400a62a35a1fea6cc7, type: 3}
@@ -235,7 +247,7 @@ GameObject:
   - component: {fileID: 257750930}
   - component: {fileID: 257750929}
   - component: {fileID: 257750928}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -587,6 +599,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text1: {fileID: 1773971411}
   text2: {fileID: 426065760}
+  starButton: {fileID: 1667746430}
 --- !u!225 &680917663
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -662,7 +675,7 @@ MonoBehaviour:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_SelectedColor: {r: 0.5882353, g: 0.5882353, b: 0.5882353, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -1113,7 +1126,7 @@ MonoBehaviour:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_SelectedColor: {r: 0.5882353, g: 0.5882353, b: 0.5882353, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1

@@ -3,32 +3,46 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class TimeController : MonoBehaviour
 {
-    public static TimeController instance;
 
     public Text time;
     public Text finalTime;
+    public GameObject timeMenu;
     public GameObject finalMenu;
     public GameObject finalRestartButton;
+    
+    private static TimeController _instance;
+    public static TimeController instance { get { return _instance; } }
+
+
+    private void Awake()
+    {
+        if (_instance != null && _instance != this)
+        {
+            Destroy(this.gameObject);
+        } else {
+            _instance = this;
+        }
+    }
+    
     private string timePlayingString;
 
-    private TimeSpan timePlaying;
+    public TimeSpan timePlaying;
     private bool timerGoing;
     // private bool levelFinished;
     public float elapseTime;
-    private void Awake()
-    {
-        instance = this;
-    }
+    
     // Start is called before the first frame update
     void Start()
     {
         time.text = "Time:00:00";
         finalTime.text = "Time:00:00";
         timerGoing = false;
+        timeMenu.SetActive(false);
     }
 
     private void Update()
@@ -72,6 +86,7 @@ public class TimeController : MonoBehaviour
         eventSystem.SetSelectedGameObject(finalRestartButton, new BaseEventData(eventSystem));
         finalTime.text = timePlayingString;
         timePlaying = TimeSpan.Zero;
+        timeMenu.SetActive(false);
     }
 
 }
