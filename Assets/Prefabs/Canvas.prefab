@@ -1151,7 +1151,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 4681954158782299420}
         m_TargetAssemblyTypeName: PauseMenu, UI
         m_MethodName: RestartLevel
         m_Mode: 1

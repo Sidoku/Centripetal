@@ -39,10 +39,14 @@ public class PauseMenu : MonoBehaviour
     {
         switch (SceneManager.GetActiveScene().buildIndex)
         {
-            case 0:
-                PlayerController.Instance.transform.position = new Vector3(13, 6, -1).normalized;
-                break;
             case 1:
+                SceneManager.LoadScene(1);
+                break;
+            case 2:
+                SceneManager.LoadScene(2);
+                break;
+            case 3:
+                SceneManager.LoadScene(3);
                 break;
         }
         // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
