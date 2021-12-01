@@ -31,10 +31,10 @@ public class TimeController : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            ShowEndMenu();
-        }
+        // if (Input.GetMouseButtonDown(0))
+        // {
+        //     ShowEndMenu();
+        // }
     }
     public void BeginTimer()
     {
