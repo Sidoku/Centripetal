@@ -40,7 +40,7 @@ public class PauseMenu : MonoBehaviour
         switch (SceneManager.GetActiveScene().buildIndex)
         {
             case 1:
-                SceneManager.LoadScene(1);
+                PlayerController.Instance.transform.position = new Vector3(12,9,-0.8f);
                 break;
             case 2:
                 SceneManager.LoadScene(2);
