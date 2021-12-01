@@ -474,6 +474,16 @@ MonoBehaviour:
     volume: 0.22
     playOnAwake: 0
     loop: 0
+  - clip: {fileID: 8300000, guid: 08d40ae1359924e1097ab473bee267d2, type: 3}
+    outputGroup: {fileID: 8470672847087512924, guid: 6c02b6b7430504952b47d19902824dc8, type: 2}
+    volume: 0.22
+    playOnAwake: 0
+    loop: 0
+  - clip: {fileID: 8300000, guid: e1418d047ecaf4256b600c7b4da8c66e, type: 3}
+    outputGroup: {fileID: 8470672847087512924, guid: 6c02b6b7430504952b47d19902824dc8, type: 2}
+    volume: 0.22
+    playOnAwake: 0
+    loop: 0
 --- !u!1 &2436909787891939249
 GameObject:
   m_ObjectHideFlags: 0

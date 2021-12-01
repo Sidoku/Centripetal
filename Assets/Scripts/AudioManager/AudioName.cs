@@ -47,17 +47,15 @@ public static class AudioName
     {
         get => "Action 1";
     }
-    
-    
-    
-    public static string Win
+
+    public static string Water
     {
-        get => "DM-CGS-12";
+        get => "Water_Punch_1";
     }
     
-    public static string CollectCoin
+    public static string Boost
     {
-        get => "DM-CGS-15";
+        get => "Boost";
     }
     
     public static string CollectDiamond
