@@ -6,25 +6,31 @@ TagManager:
   tags:
   - Ground
   - Ceiling
+  - SpeedZone
   - Slope
-  - Ball
+  - Box
+  - Wall
+  - Breakfast
+  - Yoyo
+  - GrapplePoint
+  - Glass
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Slope
   - Water
   - UI
-  - Bounce Grapple
+  - Yoyo
+  - Items
+  - GroundCheck
+  - Grapple
+  - CollectionTrigger
+  - Collection
+  - Player
+  - Ground
+  - Objects
   - Ceiling
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
   - 
   - 
   - 
@@ -44,4 +50,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: NPC
+    uniqueID: 2568242019
     locked: 0

@@ -1,0 +1,20 @@
+{
+    "name": "Grapple",
+    "rootNamespace": "",
+    "references": [
+        "GUID:75469ad4d38634e559750d17036d5f7c",
+        "GUID:dc04f38471c3a459fb4d31124ee9127d",
+        "GUID:b4f3ffb7a82aa4a2abf225a6152b1520",
+        "GUID:7663080299e1745ec926a601ed0457ae",
+        "GUID:a19524356a519470cb92c80357529e3e"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

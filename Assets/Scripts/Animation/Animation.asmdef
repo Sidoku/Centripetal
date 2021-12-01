@@ -1,0 +1,17 @@
+{
+    "name": "Animation",
+    "rootNamespace": "",
+    "references": [
+        "GUID:f3295632d4ca24cbb9f66c027ce20db7",
+        "GUID:a19524356a519470cb92c80357529e3e"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

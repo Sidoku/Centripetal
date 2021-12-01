@@ -791,7 +791,7 @@ MonoBehaviour:
   move: {x: 0, y: 0}
   boost: 0
   isClickedBoost: 0
-  boostForce: 11
+  boostForce: 20
   jumps: 0
   maxJumps: 2
   maxBoost: 1
