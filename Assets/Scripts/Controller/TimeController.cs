@@ -9,9 +9,13 @@ public class TimeController : MonoBehaviour
     public static TimeController instance;
 
     public Text time;
+    public Text finalTime;
+    public GameObject finalMenu;
+    private string timePlayingString;
 
     private TimeSpan timePlaying;
     private bool timerGoing;
+    // private bool levelFinished;
     public float elapseTime;
     private void Awake()
     {
@@ -21,9 +25,17 @@ public class TimeController : MonoBehaviour
     void Start()
     {
         time.text = "Time:00:00";
+        finalTime.text = "Time:00:00";
         timerGoing = false;
     }
 
+    private void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            ShowEndMenu();
+        }
+    }
     public void BeginTimer()
     {
         timerGoing = true;
@@ -43,11 +55,18 @@ public class TimeController : MonoBehaviour
         {
             elapseTime += Time.deltaTime;//start add time. then change this to timespan, give that value to timeplaying
             timePlaying = TimeSpan.FromSeconds(elapseTime);
-            string timePlayingString = "Time:" + timePlaying.ToString("mm\\:ss");//minute : second, if want ff, +.'ff'
+            timePlayingString = "Time:" + timePlaying.ToString("mm\\:ss");//minute : second, if want ff, +.'ff'
             time.text = timePlayingString;
             
             yield return null;
         }
+    }
+
+    private void ShowEndMenu()
+    {
+        finalMenu.SetActive(true);
+        EndTimer();
+        finalTime.text = timePlayingString;
     }
 
 }

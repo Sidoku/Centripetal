@@ -314,7 +314,7 @@ public class PlayerController : MonoBehaviour
         if (boost > 0)
         {
             dashFX.SetActive(true);
-            
+            AudioManager.PlayAudio(AudioName.Boost);
             isClickedBoost = true;
             Vector2 v2Velocity01 = rb.velocity;
             if (move.x < 0) //move.x is positive when moving right, move.x is negative when moving left
